@@ -4,7 +4,7 @@
 
 <ol>
 <li><b>Get all items in a category(eg:-get all books)</b></li>
-<a href=''>GET /api/items/:category</a> <br>
+<a href='https://best-read.herokuapp.com/api/items/books'>GET /api/items/:category</a> <br>
 (/api/items/books)<br>
 [{
 	"id": "xyz...",<br>
@@ -31,7 +31,7 @@ Status: 200
 <br><br>
 
 <li><b>Get all items</b></li>
-<a href=''>GET /api/items/</a> <br>
+<a href='https://best-read.herokuapp.com/api/items'>GET https://best-read.herokuapp.com/api/items</a> <br>
 (/api/items/)<br>
 [{
 	"id": "xyz...",<br>
