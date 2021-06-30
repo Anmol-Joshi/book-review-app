@@ -30,6 +30,32 @@
 Status: 200
 <br><br>
 
+<li><b>Get all items</b></li>
+<a href=''>GET /api/items/</a> <br>
+(/api/items/)<br>
+[{
+	"id": "xyz...",<br>
+  "title":"abc",<br>
+  "author":"abc-xyz",<br>
+  "overview":"Sample overview of the book",<br>
+  "thumbnail": "https://avatars.aljsl.com/",<br>
+  "averageRating":8.3,<br>
+  "totalRating":333,<br>
+  "category":"anyting",<br>
+  "subCategory":"business",<br>
+}, {<br>
+	"id": "xyz...",<br>
+  "title":"abc",<br> 
+  "author":"abc-xyz",<br>
+  "overview":"Sample overview of the book",<br>
+  "thumbnail": "https://avatars.aljsl.com/",<br>
+  "averageRating":8.3,<br>
+  "totalRating":333,<br>
+  "category":"anything",<br>
+}]<br><br>
+Status: 200
+<br><br>
+
 <li><b>Post a review:-</b></li>
 <a href=''>POST /api/items/review</a> <br>
 (/api/items/review)<br>
