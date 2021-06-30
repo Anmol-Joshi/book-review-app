@@ -6,6 +6,15 @@ const MongoStore = require('connect-mongo');
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 const api = require('./server/api');
 const db = require('./server/db');
 
@@ -17,32 +26,36 @@ const port = process.env.PORT || 4000;
 
 //Initiate connection with database
 db.connect({
-    host: process.env.DB_HOST,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
 }).then(() => {
-    //Handle /api with the api middleware
-    app.use('/api', session({
-        genid() {
-            return genuuid() // use UUIDs for session IDs
-        },
-        store: new MongoStore({ client: db.getClient() }),
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: true,
-    }), api);
+  //Handle /api with the api middleware
+  app.use(
+    '/api',
+    session({
+      genid() {
+        return genuuid(); // use UUIDs for session IDs
+      },
+      store: new MongoStore({ client: db.getClient() }),
+      secret: process.env.SESSION_SECRET,
+      resave: false,
+      saveUninitialized: true,
+    }),
+    api
+  );
 
-    //Handle non-api routes with static build folder
-    app.use(express.static(path.join(__dirname, 'build')));
+  //Handle non-api routes with static build folder
+  app.use(express.static(path.join(__dirname, 'build')));
 
-    //Return index.html for routes not handled by build folder
-    app.get('*', function (req, res) {
+  //Return index.html for routes not handled by build folder
+  app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
-    });
+  });
 
-    //Start listening on port
-    app.listen(port, () => {
-        console.log(`Server listening at port: ${port}`);
-    });
+  //Start listening on port
+  app.listen(port, () => {
+    console.log(`Server listening at port: ${port}`);
+  });
 });
