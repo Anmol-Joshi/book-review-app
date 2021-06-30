@@ -4,8 +4,9 @@
 
 <ol>
 <li><b>Get all items in a category(eg:-get all books)</b></li>
-<a href='https://best-read.herokuapp.com/api/items/books'>GET /api/items/:category</a> <br>
+<a href='https://best-read.herokuapp.com/api/items/books'>GET https://best-read.herokuapp.com/api/items/books</a> <br>
 (/api/items/books)<br>
+(/api/items/laptop)<br>
 [{
 	"id": "xyz...",<br>
   "title":"abc",<br>
