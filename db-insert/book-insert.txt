@@ -1,0 +1,81 @@
+db.books.insertOne({
+  "title": "Zero to One: Notes on Startups,How to Build the Future",
+
+  "author": "Peter Thiel, Blake Masters",
+  "description": "If you want to build a better future, you must believe in secrets.The great secret of our time is that there are still uncharted frontiers to explore and new inventions to create. In Zero to One, legendary entrepreneur and investor Peter Thiel shows how we can find singular ways to create those new things.Thiel begins with the contrarian premise that we live in an age of technological stagnation, even if we’re too distracted by shiny mobile devices to notice. Information technology has improved rapidly, but there is no reason why progress should be limited to computers or Silicon Valley. Progress can be achieved in any industry or area of business. It comes from the most important skill that every leader must master: learning to think for yourself.Doing what someone else already knows how to do takes the world from 1 to n, adding more of something familiar. But when you do something new, you go from 0 to 1. The next Bill Gates will not build an operating system. The next Larry Page or Sergey Brin won’t make a search engine. Tomorrow’s champions will not win by competing ruthlessly in today’s marketplace. They will escape competition altogether, because their businesses will be unique.Zero to One presents at once an optimistic view of the future of progress in America and a new way of thinking about innovation: it starts by learning to ask the questions that lead you to find value in unexpected places.",
+  "pages": "225",
+  "publishDate": "Published September 16th 2014 by Crown Business",
+  "amazon": "https://www.amazon.in/Zero-One-Start-Build-Future/dp/0753555190/ref=sr_1_1?dchild=1&keywords=zero+to+one&qid=1624960843&sr=8-1",
+  "libgen": "http://libgen.li/ads.php?md5=81e169c36fc303fa1f36221d3e68a4d0",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/71m-MxdJ2WL.jpg"
+})
+
+db.books.insertOne({
+  title: "The Power of Habit : Why We Do What We Do, and How to Change",
+
+  author: "Charles Duhigg",
+  "description": "<div>A young woman walks into a laboratory. Over the past two years, she has transformed almost every aspect of her life. She has quit smoking, run a marathon, and been promoted at work. The patterns inside her brain, neurologists discover, have fundamentally changed.<br>Marketers at Procter & Gamble study videos of people making their beds. They are desperately trying to figure out how to sell a new product called Febreze, on track to be one of the biggest flops in company history. Suddenly, one of them detects a nearly imperceptible pattern—and with a slight shift in advertising, Febreze goes on to earn a billion dollars a year.<br>An untested CEO takes over one of the largest companies in America. His first order of business is attacking a single pattern among his employees—how they approach worker safety—and soon the firm, Alcoa, becomes the top performer in the Dow Jones.<br>What do all these people have in common? They achieved success by focusing on the patterns that shape every aspect of our lives.<br>They succeeded by transforming habits.<br>In The Power of Habit, award-winning New York Times business reporter Charles Duhigg takes us to the thrilling edge of scientific discoveries that explain why habits exist and how they can be changed. With penetrating intelligence and an ability to distill vast amounts of information into engrossing narratives, Duhigg brings to life a whole new understanding of human nature and its potential for transformation.<br>Along the way we learn why some people and companies struggle to change, despite years of trying, while others seem to remake themselves overnight. We visit laboratories where neuroscientists explore how habits work and where, exactly, they reside in our brains. We discover how the right habits were crucial to the success of Olympic swimmer Michael Phelps, Starbucks CEO Howard Schultz, and civil-rights hero Martin Luther King, Jr. We go inside Procter & Gamble, Target superstores, Rick Warren’s Saddleback Church, NFL locker rooms, and the nation’s largest hospitals and see how implementing so-called keystone habits can earn billions and mean the difference between failure and success, life and death.<br>At its core, The Power of Habit contains an exhilarating argument: The key to exercising regularly, losing weight, raising exceptional children, becoming more productive, building revolutionary companies and social movements, and achieving success is understanding how habits work.<br>Habits aren’t destiny. As Charles Duhigg shows, by harnessing this new science, we can transform our businesses, our communities, and our lives.</div>",
+  "pages": 375,
+  "publishDate": "Published February 28th 2012 by Random House",
+  "amazon": "https://www.amazon.in/Power-Habit-Why-What-Change/dp/1847946240/ref=sr_1_3?dchild=1&keywords=habit&qid=1624966695&sr=8-3",
+  "libgen": "http://libgen.li/item/index.php?md5=E0573FDD2B8876C3CE06CAAE9F202629",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/71iEVsSP1GL.jpg"
+})
+
+db.books.insertOne({
+  title: "The Richest Man in Babylon",
+
+  author: "George S. Clason",
+  "description": "<div>Beloved by millions, this timeless classic holds the key to all you desire and everything you wish to accomplish. This is the book that reveals the secret to personal wealth.<br>The Success Secrets of the Ancients—An Assured Road to Happiness and Prosperity<br>Countless readers have been helped by the famous “Babylonian parables,” hailed as the greatest of all inspirational works on the subject of thrift, financial planning, and personal wealth. In language as simple as that found in the Bible, these fascinating and informative stories set you on a sure path to prosperity and its accompanying joys. Acclaimed as a modern-day classic, this celebrated bestseller offers an understanding of—and a solution to—your personal financial problems that will guide you through a lifetime. This is the book that holds the secrets to keeping your money—and making more.</div>",
+  "pages": 194,
+  "publishDate": "Published February 1st 2008 by Berkley Books (first published 1926)",
+  "amazon": "https://www.amazon.in/Richest-Man-Babylon-George-Clason/dp/9388144317/ref=sr_1_3?crid=287V6AXIM21YH&dchild=1&keywords=richest+man+in+babylon&qid=1624977437&sprefix=richest+man+in+bab%2Caps%2C314&sr=8-3",
+  "libgen": "http://libgen.li/ads.php?md5=ff50693fdd671d60e00d235d414dc991",
+  "image": "https://etpsonline.com/wp-content/uploads/2021/02/81ybHMWm9L.jpg"
+})
+
+db.books.insertOne({
+  title: "The 4-Hour Workweek",
+
+  author: "Timothy Ferriss",
+  "description": "<div><p>What do you do? Tim Ferriss has trouble answering the question. Depending on when you ask this controversial Princeton University guest lecturer, he might answer: 'I race motorcycles in Europe.' 'I ski in the Andes.' 'I scuba dive in Panama.' 'I dance tango in Buenos Aires.' He has spent more than five years learning the secrets of the New Rich, a fast-growing subculture who has abandoned the 'deferred-life plan' and instead mastered the new currencies-time and mobility-to create luxury lifestyles in the here and now. Whether you are an overworked employee or an entrepreneur trapped in your own business, this book is the compass for a new and revolutionary world.<p>Join Tim Ferriss as he teaches you:<br><ul><li>How to outsource your life to overseas virtual assistants for $5 per hour and do whatever you want?<\li><li>How blue-chip escape artists travel the world without quitting their jobs?</li><li>How to eliminate 50% of your work in 48 hours using the principles of a forgotten Italian economist?</li><li>How to trade a long-haul career for short work bursts and frequent 'mini-retirements'?</li><li>What the crucial difference is between absolute and relative income?</li><li>How to train your boss to value performance over presence, or kill your job (or company) if it's beyond repair?</li><li>What automated cash-flow 'muses' are and how to create one in 2 to 4 weeks?</li><li>How to cultivate selective ignorance-and create time-with a low-information diet?</li><li>What the management secrets of Remote Control CEOs are?</li><li>How to get free housing worldwide and airfare at 50-80% off?</li><li>How to fill the void and create a meaningful life after removing work and the office</li><ul></div>",
+  "pages": 308,
+  "publishDate": "Published June 25th 2007 by Harmony Books",
+  "amazon": "https://www.amazon.in/4-Hour-Work-Week-Escape-Anywhere/dp/0091929113/ref=sr_1_1?crid=2BXY63JNSGL0U&dchild=1&keywords=4+hour+work+week+by+tim+ferriss&qid=1624977988&sprefix=4+hour+%2Caps%2C304&sr=8-1",
+  "libgen": "http://libgen.li/ads.php?md5=8afed0114d7f76ef523a27063c6b1530",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/71DPD5QEZCL.jpg"
+})
+
+db.books.insertOne({
+  title: "Elon Musk: How the Billionaire CEO of SpaceX and Tesla is Shaping our Future",
+
+  author: "Ashlee Vance",
+  "description": "<div>Elon Musk, the entrepreneur and innovator behind SpaceX, Tesla, and SolarCity, sold one of his internet companies, PayPal, for $1.5 billion. Ashlee Vance captures the full spectacle and arc of the genius's life and work, from his tumultuous upbringing in South Africa and flight to the United States to his dramatic technical innovations and entrepreneurial pursuits. Vance uses Musk's story to explore one of the pressing questions of our age: can the nation of inventors and creators who led the modern world for a century still compete in an age of fierce global competition? He argues that Musk is an amalgam of legendary inventors and industrialists including Thomas Edison, Henry Ford, Howard Hughes, and Steve Jobs. More than any other entrepreneur today, Musk has dedicated his energies and his own vast fortune to inventing a future that is as rich and far-reaching as the visionaries of the golden age of science-fiction fantasy</div>",
+  "pages": 392,
+  "publishDate": "Published May 19th 2015 by Ecco (first published March 3rd 2015)",
+  "amazon": "https://www.amazon.in/Elon-Musk-Billionaire-SpaceX-Shaping/dp/0753555646/ref=sr_1_1?dchild=1&keywords=elon+musk&qid=1624980882&sr=8-1",
+  "libgen": "http://libgen.li/item/index.php?md5=BC183C5F50057DE9F03CE3F85293BC05",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/5112YFsXIJL.jpg"
+})
+
+db.books.insertOne({
+  title: "Steve Jobs: The Exclusive Biography",
+
+  author: "Walter Isaacson",
+  "description": "<div>Walter Isaacson's 'enthralling' (The New Yorker) worldwide bestselling biography of Apple cofounder Steve Jobs. Based on more than forty interviews with Steve Jobs conducted over two years--as well as interviews with more than 100 family members, friends, adversaries, competitors, and colleagues--Walter Isaacson has written a riveting story of the roller-coaster life and searingly intense personality of a creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing. Isaacson's portrait touched millions of readers. At a time when America is seeking ways to sustain its innovative edge, Jobs stands as the ultimate icon of inventiveness and applied imagination. He knew that the best way to create value in the twenty-first century was to connect creativity with technology. He built a company where leaps of the imagination were combined with remarkable feats of engineering. Although Jobs cooperated with the author, he asked for no control over what was written. He put nothing off-limits. He encouraged the people he knew to speak honestly. He himself spoke candidly about the people he worked with and competed against. His friends, foes, and colleagues offer an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted. His tale is instructive and cautionary, filled with lessons about innovation, character, leadership, and values. Steve Jobs is the inspiration for the movie of the same name starring Michael Fassbender, Kate Winslet, Seth Rogen, and Jeff Daniels, directed by Danny Boyle with a screenplay by Aaron Sorkin.</div>",
+  "pages": 627,
+  "publishDate": "Published October 24th 2011 by Simon & Schuster (first published October 1st 2011)",
+  "amazon": "https://www.amazon.in/Steve-Jobs-Walter-Isaacson/dp/034914043X/ref=sr_1_1?dchild=1&keywords=steve+jobs&qid=1624981021&sr=8-1",
+  "libgen": "http://libgen.li/item/index.php?md5=3A7029D4377E621D3F9468B361ACC3B0",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41n1edvVlLL._SX317_BO1,204,203,200_.jpg"
+})
+
+
+db.books.updateOne({
+  title: "Zero to One: Notes on Startups,How to Build the Future"
+},{$set:{
+    description: "<div>If you want to build a better future, you must believe in secrets.<br>The great secret of our time is that there are still uncharted frontiers to explore and new inventions to create. In Zero to One, legendary entrepreneur and investor Peter Thiel shows how we can find singular ways to create those new things.<br>Thiel begins with the contrarian premise that we live in an age of technological stagnation, even if we’re too distracted by shiny mobile devices to notice. Information technology has improved rapidly, but there is no reason why progress should be limited to computers or Silicon Valley. Progress can be achieved in any industry or area of business. It comes from the most important skill that every leader must master: learning to think for yourself.<br>Doing what someone else already knows how to do takes the world from 1 to n, adding more of something familiar. But when you do something new, you go from 0 to 1. The next Bill Gates will not build an operating system. The next Larry Page or Sergey Brin won’t make a search engine. Tomorrow’s champions will not win by competing ruthlessly in today’s marketplace. They will escape competition altogether, because their businesses will be unique.<br>Zero to One presents at once an optimistic view of the future of progress in America and a new way of thinking about innovation: it starts by learning to ask the questions that lead you to find value in unexpected places.<div>",
+}},
+{upsert :true}
+
+)
