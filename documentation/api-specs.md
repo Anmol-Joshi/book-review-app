@@ -89,11 +89,11 @@ Status: 200
 <a href=''>POST api/items/:itemId/reviews</a> <br>
 (/api/items/44/review)<br>
 {
-  "user_id":"xyz",<br>
-  "firstName":"abc",<br>
+  <!-- "user_id":"xyz", -->
+  <!-- <br>"firstName":"abc",<br>
   "lastName":"xyz",<br>
-  "avatarUrl":"xyz.abc",<br>
-  "rating":5,<br>
+  "avatarUrl":"xyz.abc",<br> -->
+  <br>"rating":5,<br>
   "review":"Lorem Ipsum is simply dummy text of the printing and <br>typesetting industry. Lorem Ipsum has been the industry's standard <br>dummy text ever since the 1500",<br>
 
 }
