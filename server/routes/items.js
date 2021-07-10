@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
 
 // GET item with itemId
 router.get('/:itemId', (req, res) => {
-  Item.find({ _id: req.params.itemId })
+  Item.findOne({ _id: req.params.itemId })
     .then((item) => {
       console.log(typeof item);
       if (item.length === 0) {
