@@ -5,7 +5,7 @@
 <ol>
 <li>user</li>
 <ul>
-<li>__id</li>
+<li>_id</li>
 <li>email(req,unique)</li>
 <li>firstName</li>
 <li>lastName</li>
@@ -16,7 +16,7 @@
 
 <li>userCredential</li>
 <ul>
-<li>__id</li>
+<li>_id</li>
 <li>email(req,unique)</li>
 <li>password</li>
 <li>createdAt</li>
@@ -25,7 +25,7 @@
 
 <li>Book</li>
 <ul>
-<li>__id</li>
+<li>_id</li>
 <li>title</li>
 <li>author</li>
 <li>overview</li>
@@ -38,12 +38,12 @@
 
 <li>RatingAndReview</li>
 <ul>
-<li>__id</li>
-<li>user_id(__id of user collection)</li>
+<li>_id</li>
+<li>user_id(_id of user collection)</li>
 <li>firstName</li>
 <li>lastName</li>
 <li>avatarUrl</li>
-<li>book_id(__id of book collection)</li>
+<li>book_id(_id of book collection)</li>
 <li>rating(0-10,required)</li>
 <li>review</li>
 <li>createdAt</li>
