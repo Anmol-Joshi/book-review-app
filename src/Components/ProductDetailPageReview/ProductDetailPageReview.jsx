@@ -23,7 +23,7 @@ class ProductDetailPageReview extends React.Component {
       console.log(postData);
       axios
         .post(
-          `http://localhost:4000/api/items/${this.props.id}/reviews`,
+          `https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`,
           postData
         )
         .then(() => {
@@ -31,8 +31,6 @@ class ProductDetailPageReview extends React.Component {
         })
         .catch((err) => {
           console.log(err);
-          if (err.response.status === 401) {
-          }
         });
     }
     // alert('A review was submitted: ' + this.state.review + this.state.rating);
