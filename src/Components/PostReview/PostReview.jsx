@@ -7,7 +7,7 @@ class PostReview extends React.Component {
     super(props);
     this.state = {
       review: '',
-      rating: 1,
+      rating: '',
     };
   }
   handleSubmit = (event) => {

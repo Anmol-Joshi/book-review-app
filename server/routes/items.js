@@ -6,6 +6,7 @@ const auth = require('../middlewares/auth');
 // const UserCredential = require('../models/user-credential');
 const User = require('../models/user');
 const Review = require('../models/review');
+const review = require('../models/review');
 
 // Item api
 // GET all items
@@ -81,6 +82,10 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
     res.status(400).send({ error: 'Rating must be between 1 and 5' });
     return;
   }
+  // Item.findOne({ _id: req.params.itemId }).then((item) => {
+  //   item.ratingSum = item.ratingSum + req.body.rating;
+  //   item.totalRatings = item.totalRatings + 1;
+  // });
   User.findOne({ _id: req.session.userId }).then((item) => {
     console.log(req.session.userId);
     // console.log(req.session.userId);
