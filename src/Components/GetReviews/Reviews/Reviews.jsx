@@ -3,7 +3,7 @@ import './Reviews.css';
 
 function Review(props) {
   let { reviews } = props;
-  console.log(reviews);
+  console.log('***reviews are', reviews);
   // const {
   //   createdAt,
   //   firstName,
@@ -17,9 +17,9 @@ function Review(props) {
   // } = props;
   return (
     <div>
-      {reviews.map((review) => (
+      {/* {reviews.map((review) => (
         <div>{review.createdAt}</div>
-      ))}
+      ))} */}
     </div>
   );
 }
