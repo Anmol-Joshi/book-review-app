@@ -12,7 +12,7 @@ class GetReviews extends React.Component {
       .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
       .then((res) => {
         this.setState({ reviews: res });
-        console.log(this.state.review);
+        console.log(this.state.reviews);
       })
       .catch((err) => {
         console.log(err);
