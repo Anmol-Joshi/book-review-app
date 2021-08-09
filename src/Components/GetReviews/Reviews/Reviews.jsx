@@ -36,7 +36,7 @@ function Review(props) {
             <br />
             {review._id}
             <br />
-            {/* <FontAwesomeIcon icon="f2ed" /> */}
+            <FontAwesomeIcon icon="f2ed" size="xs" />
             <i class="fas fa-trash-alt"></i>
             <hr />
           </div>
