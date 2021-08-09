@@ -26,7 +26,6 @@ function Review(props) {
             {review.itemId}
             <br />
             {review.firstName}
-            <br />
             {review.lastName} <br />
             {review.rating} <br />
             {review.review}
@@ -37,7 +36,8 @@ function Review(props) {
             <br />
             {review._id}
             <br />
-            <FontAwesomeIcon icon="check-square" />
+            {/* <FontAwesomeIcon icon="f2ed" /> */}
+            <i class="fas fa-trash-alt"></i>
             <hr />
           </div>
         ))}
