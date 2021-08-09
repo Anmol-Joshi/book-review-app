@@ -60,7 +60,7 @@ Status: 200
 
 <li><b>Get reviews for a particular product:-</b></li>
 <a href=''>GET /api/items/:itemId/reviews</a> <br>
-(/api/items/99/review)<br>
+(/api/items/99/reviews)<br>
 [<br>
 {<br>
   "user_id":"xyz",<br>
