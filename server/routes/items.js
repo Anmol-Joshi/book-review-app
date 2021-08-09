@@ -47,7 +47,7 @@ router.get('/:itemId', (req, res) => {
 // });
 
 // Review for item
-router.get('/:itemId/reviews', auth.authenticate, (req, res) => {
+router.get('/:itemId/reviews', (req, res) => {
   if (!req.session.userId) {
     res.status(400).send({ error: 'Not logged in' });
   }
