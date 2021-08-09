@@ -2,7 +2,8 @@ import React from 'react';
 import './Reviews.css';
 
 function Review(props) {
-  const { reviews } = props;
+  let reviews=[];
+  {reviews}= props;
   // const {
   //   createdAt,
   //   firstName,
@@ -20,6 +21,10 @@ function Review(props) {
       {/* {reviews.map((review) => (
         <div>{review.createdAt}</div>
       ))} */}
+      for(let i=0;i<reviews.length;i++){
+        reviews[i].createdAt
+      }
+
     </div>
   );
 }
