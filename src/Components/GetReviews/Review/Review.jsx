@@ -17,7 +17,7 @@ function Review(props) {
   return (
     <div>
       {createdAt},{firstName},{itemId},{lastName},{rating},{review},{updatedAt},
-      {userId},{id}
+      {userId},{_id}
       <hr />
     </div>
   );
