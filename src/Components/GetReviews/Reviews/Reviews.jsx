@@ -38,6 +38,9 @@ function Review(props) {
             <br />
             <FontAwesomeIcon className="f2ed" size="2x" />
             <i class="fas fa-trash-alt"></i>
+            <button className="btn">
+              <i className="fa fa-home"></i>
+            </button>
             <hr />
           </div>
         ))}
