@@ -16,7 +16,7 @@ function Review(props) {
   } = props;
   return (
     <div>
-      {console.log(props)}
+      Hello from review console.log(props)
       {createdAt}
       {createdAt},{firstName},{itemId},{lastName},{rating},{review},{updatedAt},
       {userId},{_id}

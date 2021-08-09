@@ -5,13 +5,14 @@ import Review from './Review/Review';
 class GetReviews extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { reviews: [] };
+    this.state = { reviews: [], isLoaded: false };
   }
   componentDidMount() {
     axios
       .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
       .then((res) => {
-        this.setState({ reviews: res });
+        this.setState({ reviews: res, isLoaded: true });
+
         console.log(this.state.reviews.data);
       })
       .catch((err) => {
@@ -21,7 +22,8 @@ class GetReviews extends React.Component {
   render() {
     return (
       <div>
-        {this.state.reviews.length > 0 &&
+        {console.log(this.state.isLoaded)}
+        {this.state.isLoaded === true &&
           this.state.reviews.map((review) => <Review props={review} />)}
       </div>
     );
