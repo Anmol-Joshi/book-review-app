@@ -3,7 +3,7 @@ import './Reviews.css';
 
 function Review(props) {
   let { reviews } = props;
-
+  console.log(reviews);
   // const {
   //   createdAt,
   //   firstName,
