@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './GetReviews.jsx';
-
+import Review from './Review/Review';
 class GetReviews extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,13 @@ class GetReviews extends React.Component {
       });
   }
   render() {
-    return <div>Hello from get reviews</div>;
+    return (
+      <div>
+        {this.state.reviews.forEach((review) => {
+          <Review />;
+        })}
+      </div>
+    );
   }
 }
 export default GetReviews;
