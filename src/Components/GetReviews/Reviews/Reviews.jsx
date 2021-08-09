@@ -2,8 +2,8 @@ import React from 'react';
 import './Reviews.css';
 
 function Review(props) {
-  let reviews=[];
-  {reviews}= props;
+  let reviews = [];
+  reviews = props.reviews;
   // const {
   //   createdAt,
   //   firstName,
@@ -17,14 +17,9 @@ function Review(props) {
   // } = props;
   return (
     <div>
-      {console.log(reviews)}
-      {/* {reviews.map((review) => (
-        <div>{review.createdAt}</div>
-      ))} */}
-      for(let i=0;i<reviews.length;i++){
-        console.log(reviews[i])
-      }
-
+      {reviews.map((review) => {
+        return <div>{review}</div>;
+      })}
     </div>
   );
 }
