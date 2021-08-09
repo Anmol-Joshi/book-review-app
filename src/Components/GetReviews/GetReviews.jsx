@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './GetReviews.jsx';
-import Review from './Review/Review';
+import Reviews from './Reviews/Reviews.jsx';
 class GetReviews extends React.Component {
   constructor(props) {
     super(props);
@@ -22,9 +22,7 @@ class GetReviews extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.state.isLoaded)}
-        {this.state.isLoaded === true &&
-          this.state.reviews.map((review) => <Review props={review} />)}
+        <Reviews reviews={this.state.reviews} />
       </div>
     );
   }
