@@ -48,9 +48,9 @@ router.get('/:itemId', (req, res) => {
 
 // Review for item
 router.get('/:itemId/reviews', (req, res) => {
-  if (!req.session.userId) {
-    res.status(400).send({ error: 'Not logged in' });
-  }
+  // if (!req.session.userId) {
+  //   res.status(400).send({ error: 'Not logged in' });
+  // }
   Review.find({ itemId: req.params.itemId }).then((reviews) => {
     res.status(200).send(reviews);
   });
