@@ -22,9 +22,7 @@ class GetReviews extends React.Component {
     return (
       <div>
         {this.state.reviews.length > 0 &&
-          this.state.reviews.forEach((review) => {
-            <Review />;
-          })}
+          this.state.reviews.map((review) => <Review props={review} />)}
       </div>
     );
   }
