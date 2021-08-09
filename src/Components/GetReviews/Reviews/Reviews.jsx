@@ -2,8 +2,8 @@ import React from 'react';
 import './Reviews.css';
 
 function Review(props) {
-  let reviews = [];
-  reviews = props.reviews;
+  let { reviews } = props;
+
   // const {
   //   createdAt,
   //   firstName,
