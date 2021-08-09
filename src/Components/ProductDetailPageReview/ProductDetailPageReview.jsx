@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-constructor */
-import { Link } from 'react-router-dom';
 import React from 'react';
 import './ProductDetailPageReview.css';
 import PostReview from '../PostReview/PostReview';
