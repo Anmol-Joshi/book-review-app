@@ -17,7 +17,28 @@ function Review(props) {
   // } = props;
   return (
     <div>
-      {reviews && reviews.map((review) => <div>{review.createdAt}</div>)}
+      {reviews &&
+        reviews.map((review) => (
+          <div>
+            {review.createdAt}
+            <br />
+            {review.itemId}
+            <br />
+            {review.firstName}
+            <br />
+            {review.lastName} <br />
+            {review.rating} <br />
+            {review.review}
+            <br />
+            {review.updatedAt}
+            <br />
+            {review.userId}
+            <br />
+            {review._id}
+            <br />
+            <hr />
+          </div>
+        ))}
     </div>
   );
 }

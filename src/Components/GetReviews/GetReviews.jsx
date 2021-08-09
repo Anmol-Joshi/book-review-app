@@ -23,6 +23,7 @@ class GetReviews extends React.Component {
     return (
       <div>
         {console.log(this.state.reviews)}
+        <hr />
         <Reviews reviews={this.state.reviews.data} />
       </div>
     );
