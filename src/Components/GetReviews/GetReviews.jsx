@@ -11,7 +11,7 @@ class GetReviews extends React.Component {
     axios
       .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
       .then((res) => {
-        this.setState({ reviews: res, isLoaded: true });
+        this.setState({ reviews: res.data, isLoaded: true });
 
         console.log(this.state.reviews.data);
       })
