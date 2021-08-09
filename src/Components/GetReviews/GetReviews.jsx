@@ -9,9 +9,7 @@ class GetReviews extends React.Component {
   }
   componentDidMount() {
     axios
-      .GetReviews(
-        `https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`
-      )
+      .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
       .then((res) => {
         this.setState({ reviews: res });
         console.log(this.state.review);
