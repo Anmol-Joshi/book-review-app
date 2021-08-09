@@ -22,7 +22,7 @@ function Review(props) {
         <div>{review.createdAt}</div>
       ))} */}
       for(let i=0;i<reviews.length;i++){
-        reviews[i].createdAt
+        console.log(reviews[i])
       }
 
     </div>
