@@ -1,6 +1,6 @@
 import React from 'react';
 import './Reviews.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon, f2ed } from '@fortawesome/react-fontawesome';
 
 function Review(props) {
   let { reviews } = props;
@@ -36,7 +36,7 @@ function Review(props) {
             <br />
             {review._id}
             <br />
-            <FontAwesomeIcon icon="f2ed" size="xs" />
+            <FontAwesomeIcon icon={f2ed} size="xs" />
             <i class="fas fa-trash-alt"></i>
             <hr />
           </div>
