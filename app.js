@@ -6,6 +6,9 @@ const MongoStore = require('connect-mongo');
 
 const app = express();
 
+//Set port as process.env.PORT if it is present otherwise set it to 4000
+const port = process.env.PORT || 4000;
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
@@ -20,9 +23,6 @@ const db = require('./server/db');
 
 //Configure .env
 require('dotenv').config();
-
-//Set port as process.env.PORT if it is present otherwise set it to 4000
-const port = process.env.PORT || 4000;
 
 //Initiate connection with database
 db.connect({

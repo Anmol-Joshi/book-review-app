@@ -18,7 +18,7 @@ class ProductList extends React.Component {
           // console.log('products are',this.state.products)
         // }
       }).catch((err)=>{
-        console.log('error occured',err)
+        console.log('error occurred',err)
       })
     
   }

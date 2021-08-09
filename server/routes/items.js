@@ -61,11 +61,13 @@ router.delete('/:itemId/reviews', auth.authenticate, (req, res) => {
   }
   Review.deleteOne({
     $and: [{ userId: req.session.userId }, { itemId: req.params.itemId }],
-  }).then(() => {
-    res.sendStatus(204);
-  }).catch((err)=>{
-    res.status(500).send("Couldn't delete review")
   })
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      res.status(500).send("Couldn't delete review");
+    });
 });
 router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
   if (!req.session.userId) {
