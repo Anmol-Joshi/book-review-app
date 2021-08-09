@@ -1,5 +1,6 @@
 import React from 'react';
 import './Reviews.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Review(props) {
   let { reviews } = props;
@@ -36,6 +37,7 @@ function Review(props) {
             <br />
             {review._id}
             <br />
+            <FontAwesomeIcon icon="check-square" />
             <hr />
           </div>
         ))}
