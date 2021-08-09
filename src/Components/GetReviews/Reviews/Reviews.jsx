@@ -18,7 +18,7 @@ function Review(props) {
   return (
     <div>
       {reviews.map((review) => {
-        return <div>{review.createdAt}</div>;
+        return <div>{console.log(review)}</div>;
       })}
     </div>
   );
