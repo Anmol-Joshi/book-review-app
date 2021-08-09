@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import './ProductDetailPageReview.css';
 import PostReview from '../PostReview/PostReview';
+import GetReviews from '../GetReviews/GetReviews';
 
 class ProductDetailPageReview extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ProductDetailPageReview extends React.Component {
         product detail page review
         <div>{this.props.id}</div>
         <PostReview id={this.props.id} />
-        {/* <GetReviews /> */}
+        <GetReviews id={this.props.id} />
       </div>
     );
   }
