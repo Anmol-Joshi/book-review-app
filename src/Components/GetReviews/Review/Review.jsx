@@ -16,8 +16,9 @@ function Review(props) {
   } = props;
   return (
     <div>
-      {createdAt},{firstName},{itemId},{lastName},{rating},{review},{updatedAt},
-      {userId},{_id}
+      createdAt
+      {/* {createdAt},{firstName},{itemId},{lastName},{rating},{review},{updatedAt},
+      {userId},{_id} */}
       <hr />
     </div>
   );
