@@ -125,7 +125,7 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
         ratingSum += review.rating;
         totalRatings++;
       });
-      Item.findOne({ itemId: req.params.itemId })
+      Item.findOne({ _id: req.params.itemId })
         .then((item) => {
           item.totalRatings = totalRatings;
           item.ratingSum = ratingSum;
