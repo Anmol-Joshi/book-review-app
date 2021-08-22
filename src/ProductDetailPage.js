@@ -12,8 +12,8 @@ class ProductDetailsPage extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://best-read.herokuapp.com/api/items/${this.props.match.params.id}`
-        // `https://localhost:4000/api/items/${this.props.match.params.id}`
+        // `https://best-read.herokuapp.com/api/items/${this.props.match.params.id}`
+        `http://localhost:4000/api/items/${this.props.match.params.id}`
       )
       .then((res) => {
         // console.log('res is', res);

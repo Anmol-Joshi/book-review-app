@@ -1,12 +1,13 @@
 const authenticate = (req, res, next) => {
-    if (!req.session.userId) {
-        res.status(401).send('Not Logged In');
-        return;
-    }
+  console.log(req.session);
+  if (!req.session.userId) {
+    res.status(401).send('Not Logged In');
+    return;
+  }
 
-    next();
+  next();
 };
 
 module.exports = {
-    authenticate
+  authenticate,
 };

@@ -9,11 +9,12 @@ class GetReviews extends React.Component {
   }
   componentDidMount() {
     axios
-      .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
+      // .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
+      .get(`http://localhost:4000/api/items/${this.props.id}/reviews`)
       .then((res) => {
         this.setState({ reviews: res, isLoaded: true });
 
-        console.log('***GetReviews', this.state.reviews.data);
+        // console.log('***GetReviews', this.state.reviews.data);
       })
       .catch((err) => {
         console.log(err);
