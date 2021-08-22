@@ -117,19 +117,21 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
       }
     );
   });
-  Review.find({ itemId: req.params.itemId }).then((reviews) => {
-    let ratingSum = 0;
-    let totalRatings = 0;
-    reviews.forEach((review) => {
-      ratingSum += review.rating;
-      totalRatings++;
-    });
-    Item.findOne({ itemId: req.params.itemId })
-      .then((item) => {
-        item.totalRatings = totalRatings;
-        item.ratingSum = ratingSum;
-      })
-      .catch((err) => console.log(err));
-  });
+  Review.find({ itemId: req.params.itemId })
+    .then((reviews) => {
+      let ratingSum = 0;
+      let totalRatings = 0;
+      reviews.forEach((review) => {
+        ratingSum += review.rating;
+        totalRatings++;
+      });
+      Item.findOne({ itemId: req.params.itemId })
+        .then((item) => {
+          item.totalRatings = totalRatings;
+          item.ratingSum = ratingSum;
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
 });
 module.exports = router;
