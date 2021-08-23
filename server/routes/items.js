@@ -41,11 +41,6 @@ router.get('/:itemId', (req, res) => {
       res.status(500).send(err);
     });
 });
-// router.get('/:category', (req, res) => {
-//   Item.find({ category: req.params.category }).then((item) => {
-//     res.status(200).send(item);
-//   });
-// });
 
 // Review for item
 router.get('/:itemId/reviews', (req, res) => {
@@ -106,34 +101,45 @@ router.post('/:itemId/reviews/', auth.authenticate, (req, res) => {
         upsert: true,
         runValidators: true,
       },
-      // { runValidators: true },
       (err, doc) => {
         if (err) {
           res.status(500).send(err);
-          // { error: 'Internal Server Error' }
         } else {
+          let newRatingSum = 0;
+          let newTotalRatings = 0;
+          Review.find({ itemId: req.params.itemId })
+            .then((reviews) => {
+              newRatingSum = 0;
+              newTotalRatings = 0;
+              reviews.forEach((review) => {
+                newRatingSum += review.rating;
+                newTotalRatings++;
+              });
+              // console.log('**********ratingSum', newRatingSum);
+              // console.log('**********totalRatings', newTotalRatings);
+              // console.log(
+              //   '***********itemId is',
+              //   'ObjectId(' + req.params.itemId + ')'
+              // );
+              Item.findOne({ _id: req.params.itemId }).then(
+                (item) => {
+                  item.ratingSum = newRatingSum;
+                  item.totalRatings = newTotalRatings;
+                  item.save().then(() => {
+                    console.log('updated');
+                  });
+                },
+                (err) => {
+                  console.log(`Error in finding item ${err}`);
+                }
+              );
+            })
+            .catch((err) => console.log(err));
+          // console.log('******inside success query');
           res.status(200).send(reviewQuery);
         }
       }
     );
   });
-  let ratingSum = 0;
-  let totalRatings = 0;
-  Review.find({ itemId: req.params.itemId })
-    .then((reviews) => {
-      ratingSum = 0;
-      totalRatings = 0;
-      reviews.forEach((review) => {
-        ratingSum += review.rating;
-        totalRatings++;
-      });
-      Item.findOne({ _id: 'ObjectId(' + req.params.itemId + ')' })
-        .then((item) => {
-          item.totalRatings = totalRatings;
-          item.ratingSum = ratingSum;
-        })
-        .catch((err) => console.log(err));
-    })
-    .catch((err) => console.log(err));
 });
 module.exports = router;
