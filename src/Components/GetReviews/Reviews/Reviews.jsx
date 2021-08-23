@@ -20,7 +20,7 @@ function Review(props) {
     <div>
       {reviews &&
         reviews.map((review) => (
-          <div>
+          <div key={review._id}>
             {review.createdAt}
             <br />
             {review.itemId}

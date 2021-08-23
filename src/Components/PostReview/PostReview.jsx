@@ -20,23 +20,19 @@ class PostReview extends React.Component {
     } else {
       console.log(postData);
       // const token = sessionStorage.getItem('token');
+
       axios
         .post(
           // `https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`,
-          `http://localhost:4000/api/items/${this.props.id}/reviews`,
+          `/api/items/${this.props.id}/reviews`,
           postData,
-          {
-            headers: {
-              Accept: 'application/json, text/plain, */*',
-              'Content-Type': 'application/json',
-            },
-          },
           { withCredentials: true }
         )
         .then(() => {
           alert('review submitted');
         })
         .catch((err) => {
+          console.log(this.session);
           console.log(err);
         });
     }

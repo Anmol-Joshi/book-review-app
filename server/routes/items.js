@@ -70,7 +70,7 @@ router.delete('/:itemId/reviews', auth.authenticate, (req, res) => {
       res.status(500).send("Couldn't delete review");
     });
 });
-router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
+router.post('/:itemId/reviews/', auth.authenticate, (req, res) => {
   if (!req.session.userId) {
     res.status(400).send({ error: 'Not logged in' });
   }
