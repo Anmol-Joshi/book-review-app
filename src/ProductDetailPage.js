@@ -3,6 +3,7 @@ import axios from 'axios';
 import React from 'react';
 import ProductDetailPageProduct from './Components/ProductDetailPageProduct/ProductDetailPageProduct';
 import ProductDetailPageReview from './Components/ProductDetailPageReview/ProductDetailPageReview';
+import Navbar from './Components/Navbar/Navabar';
 class ProductDetailsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -29,9 +30,10 @@ class ProductDetailsPage extends React.Component {
   render() {
     return (
       <div>
-        {console.log('***', this.state)}
+        <Navbar />
+        {/* {console.log('***', this.state)} */}
         <div>{this.props.match.params.id}</div>
-        {console.log(this.state)}
+        {/* {console.log(this.state)} */}
         {/* {!this.state && console.log('Not null')} */}
         {this.state !== null && (
           <ProductDetailPageProduct

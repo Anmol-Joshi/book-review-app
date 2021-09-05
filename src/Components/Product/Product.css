@@ -1,0 +1,10 @@
+.product-card {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.product-card-title {
+  margin: 20px;
+  font-family: 'Nunito', sans-serif;
+}

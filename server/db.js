@@ -1,32 +1,35 @@
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose');
+// mongoose.set('useFindAndModify', false);
 const connect = (dbConfig) => {
-    try {
-        const {host, username, password, database} = dbConfig;
+  try {
+    const { host, username, password, database } = dbConfig;
 
-        let absoluteHostName = host;
-        if (username) {
-            if (password !== undefined) {
-                absoluteHostName = `${username}:${password}@${absoluteHostName}`;
-            } else {
-                absoluteHostName = `${username}@${absoluteHostName}`;
-            }
-        }
-
-        const mongoUri = `mongodb+srv://${absoluteHostName}/${database}?retryWrites=true&w=majority`;
-
-        return mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
-    } catch (err) {
-        console.log(`Error connecting to MongoDB: ${err}`);
-        throw err;
+    let absoluteHostName = host;
+    if (username) {
+      if (password !== undefined) {
+        absoluteHostName = `${username}:${password}@${absoluteHostName}`;
+      } else {
+        absoluteHostName = `${username}@${absoluteHostName}`;
+      }
     }
+
+    const mongoUri = `mongodb+srv://${absoluteHostName}/${database}?retryWrites=true&w=majority`;
+
+    return mongoose.connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+  } catch (err) {
+    console.log(`Error connecting to MongoDB: ${err}`);
+    throw err;
+  }
 };
 
 const getClient = () => {
-    return mongoose.connection.getClient();
-}
+  return mongoose.connection.getClient();
+};
 
 module.exports = {
-    connect,
-    getClient
+  connect,
+  getClient,
 };

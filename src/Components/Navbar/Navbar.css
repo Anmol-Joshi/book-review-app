@@ -1,0 +1,29 @@
+.nav-container {
+  position: relative;
+  top: 0;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: x-large;
+  font-family: 'Nunito', sans-serif;
+  margin: 3px;
+}
+.site-logo {
+  vertical-align: center;
+  /* text-decoration: none; */
+}
+.nav-sign-in {
+  vertical-align: center;
+  text-decoration: underline;
+}
+.nav-site-name,
+.nav-sign-in {
+  display: flex;
+  justify-content: space-between;
+  /* align-content: inherit; */
+  padding-top: 0;
+  padding: 5px;
+  border: 0;
+}

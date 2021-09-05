@@ -39,6 +39,13 @@ class PostReview extends React.Component {
     // alert('A review was submitted: ' + this.state.review + this.state.rating);
     event.preventDefault();
   };
+
+  // const [category, setCategory] = React.useState('');
+  //   const handleCategoryChange = (rating) => {
+  //     this.setState({rating:rating})
+  //     // setCategory(category);
+  //     // console.log(category);
+  // }
   render() {
     return (
       <div>
@@ -53,11 +60,22 @@ class PostReview extends React.Component {
           </label>
           <label>
             Rating
-            <input
+            {/* <input
               type="text"
               onChange={(e) => this.setState({ rating: e.target.value })}
               value={this.state.rating}
-            />
+            /> */}
+            <select
+              name="category"
+              value={this.state.rating}
+              onChange={(e) => this.setState({ rating: e.target.value })}
+            >
+              <option id="1">1</option>
+              <option id="2">2</option>
+              <option id="3">3</option>
+              <option id="4">4</option>
+              <option id="1">5</option>
+            </select>
           </label>
           <input type="submit" value="Submit" />
         </form>

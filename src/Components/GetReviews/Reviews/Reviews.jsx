@@ -3,8 +3,11 @@ import './Reviews.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Review(props) {
-  let { reviews } = props;
-  console.log('***reviews are', reviews);
+  let { reviews, id } = props;
+  // console.log('***reviews are', reviews);
+  // console.log('**** id is', id);
+  // console.log('**** userId is', this.session.userId);
+  // req.session.userId
   // const {
   //   createdAt,
   //   firstName,
@@ -16,6 +19,9 @@ function Review(props) {
   //   userId,
   //   _id,
   // } = props;
+  {
+    /* this.props.id !== review.userId && */
+  }
   return (
     <div>
       {reviews &&
@@ -38,9 +44,9 @@ function Review(props) {
             <br />
             {/* <FontAwesomeIcon className="f2ed" size="2x" /> */}
             {/* <i class="fas fa-trash-alt"></i> */}
-            <button className="btn">
+            {/* <button className="btn">
               <i className="fa fas fa-trash-alt"></i>
-            </button>
+            </button> */}
             <hr />
           </div>
         ))}
