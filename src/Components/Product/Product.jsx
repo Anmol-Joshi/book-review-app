@@ -7,7 +7,7 @@ function Product(props) {
   const { _id, title, ratingSum, totalRatings, image } = product;
   // console.log(_id);
   return (
-    <div key={_id}>
+    <div key={_id} className="individual-product">
       {/* <Link to={`/productdetailpage/${product.id}`}> */}
       <Link to={`/productdetailpage/${_id}`} style={{ color: '#000' }}>
         {/* {console.log({ _id }, 'id is')} */}

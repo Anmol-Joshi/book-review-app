@@ -11,9 +11,11 @@ function Products(props) {
   return (
     <div>
       <h1 className="product-list-heading">Product List</h1>
-      {products.map((product) => (
-        <Product key={product._id} product={product} />
-      ))}
+      <div className="product-group">
+        {products.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
     </div>
   );
 }
