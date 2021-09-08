@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const reviewSchema = new Schema({
-  _id: String,
+  // _id: String,
   itemId: String,
   userId: String,
   firstName: String,
   lastName: String,
-  avatarUrl: String,
+  // avatarUrl: String,
   rating: {
     type: Number,
     min: 0,
