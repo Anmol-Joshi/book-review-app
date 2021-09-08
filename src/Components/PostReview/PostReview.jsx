@@ -49,35 +49,40 @@ class PostReview extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Review
-            <input
-              type="text"
-              onChange={(e) => this.setState({ review: e.target.value })}
-              value={this.state.review}
-            />
-          </label>
-          <label>
-            Rating
+        <form className="review-form" onSubmit={this.handleSubmit}>
+          <label className="review-form-label">
+            <div className="rating-heading">Rating:-</div>
             {/* <input
               type="text"
               onChange={(e) => this.setState({ rating: e.target.value })}
               value={this.state.rating}
             /> */}
             <select
+              className="review-options"
               name="category"
               value={this.state.rating}
               onChange={(e) => this.setState({ rating: e.target.value })}
             >
-              <option id="1">1</option>
+              <option defaultValue id="1">
+                1
+              </option>
               <option id="2">2</option>
               <option id="3">3</option>
               <option id="4">4</option>
-              <option id="1">5</option>
+              <option id="5">5</option>
             </select>
           </label>
-          <input type="submit" value="Submit" />
+          <label className="review-form-label">
+            <div className="review-heading">Review:-</div>
+            <textarea
+              type="text"
+              onChange={(e) => this.setState({ review: e.target.value })}
+              value={this.state.review}
+            />
+          </label>
+          <button className="review-form-submit-button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );

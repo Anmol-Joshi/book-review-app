@@ -1,4 +1,28 @@
+* {
+  font-family: 'Nunito', sans-serif;
+}
 .product-detail-page-product-product-image {
   height: 200px;
   width: 150px;
+  border: 2px solid black;
+  margin: 4px;
+}
+.product-info-group {
+  display: flex;
+  font-family: 'Nunito', sans-serif;
+  margin: 4px;
+}
+.title-title,
+.author-title,
+.category-title,
+.pages-title,
+.description-title {
+  display: inline;
+  font-weight: 600;
+  /* bold,underline */
+}
+.description {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 10px;
 }

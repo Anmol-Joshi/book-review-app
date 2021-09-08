@@ -6,7 +6,7 @@ const auth = require('../middlewares/auth');
 // const UserCredential = require('../models/user-credential');
 const User = require('../models/user');
 const Review = require('../models/review');
-const review = require('../models/review');
+// const review = require('../models/review');
 
 // Item api
 // GET all items

@@ -1,0 +1,26 @@
+.review-heading,
+.rating-heading {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* font-weight: 600; */
+  /* margin: 10px; */
+}
+.review-form {
+  font-size: 25px;
+  /* text-align: center; */
+  /* color: #f55a00; */
+  /* margin: 0 0 0.5vh 0; */
+}
+.review-form-label {
+  display: block;
+}
+.review-form-submit-button {
+  color: white;
+  background-color: #555555;
+  font-size: 20px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.review-options {
+  font-size: 20px;
+}

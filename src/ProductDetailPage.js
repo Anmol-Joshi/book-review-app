@@ -32,7 +32,7 @@ class ProductDetailsPage extends React.Component {
       <div>
         <Navbar />
         {/* {console.log('***', this.state)} */}
-        <div>{this.props.match.params.id}</div>
+        {/* <div>{this.props.match.params.id}</div> */}
         {/* {console.log(this.state)} */}
         {/* {!this.state && console.log('Not null')} */}
         {this.state !== null && (

@@ -26,8 +26,8 @@ class ProductDetailPageReview extends React.Component {
   render() {
     return (
       <div>
-        product detail page review
-        <div>{this.props.id}</div>
+        <div className="review-main-heading">Post Review and Rating:-</div>
+        {/* <div>{this.props.id}</div> */}
         <PostReview id={this.props.id} />
         <GetReviews
           id={this.props.id}
