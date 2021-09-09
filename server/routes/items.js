@@ -105,12 +105,18 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
     }).then(
       (review) => {
         if (review == null) {
-          insertReview.save();
+          insertReview.save(() => {
+            updateAvgReview();
+            console.log('saved avg review');
+          });
         } else {
           console.log('***review is', review);
           review.review = insertReview.review;
           review.rating = insertReview.rating;
-          review.save().then(updateAvgReview());
+          review.save(() => {
+            updateAvgReview();
+            console.log('saved avg review');
+          });
         }
         // updateAvgReview();
       },
@@ -119,7 +125,7 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
       }
     );
   });
-  // Test
+
   function updateAvgReview() {
     Review.find({ itemId: req.params.itemId }).then((reviews) => {
       let newRatingSum = 0;
@@ -132,17 +138,11 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
       console.log('****newTotalRatings', newTotalRatings);
       console.log('****itemId is', 'ObjectId("', req.params.itemId, '")');
       let ObjectId = require('mongodb').ObjectId;
-      // let o_id = new ObjectId(req.params.itemId);
-      // const itmId = req.params.itemId; //new ObjectId(req.params.itemId);
       console.log('****itmId is', req.params.itemId);
-      // let newRatingSumGlobal;
-      // let newTotalRatingsGlobal;
       Item.findById({ _id: new ObjectId(req.params.itemId) }).then(
         (item) => {
-          // Item.findOneAndReplace;
           console.log('*****newRatingSum1', newRatingSum);
           console.log('****newTotalRatings1', newTotalRatings);
-          // console.log(item);
           item.ratingSum = newRatingSum;
           item.totalRatings = newTotalRatings;
           console.log(item);
@@ -154,39 +154,6 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
       );
     });
   }
-  // Review.find({ itemId: req.params.itemId }).then((reviews) => {
-  //   let newRatingSum = 0;
-  //   let newTotalRatings = 0;
-  //   reviews.forEach((review) => {
-  //     newRatingSum += review.rating;
-  //     newTotalRatings++;
-  //   });
-  //   console.log('*****newRatingSum', newRatingSum);
-  //   console.log('****newTotalRatings', newTotalRatings);
-  //   console.log('****itemId is', 'ObjectId("', req.params.itemId, '")');
-  //   let ObjectId = require('mongodb').ObjectId;
-  //   // let o_id = new ObjectId(req.params.itemId);
-  //   // const itmId = req.params.itemId; //new ObjectId(req.params.itemId);
-  //   console.log('****itmId is', req.params.itemId);
-  //   // let newRatingSumGlobal;
-  //   // let newTotalRatingsGlobal;
-  //   Item.findById({ _id: new ObjectId(req.params.itemId) }).then(
-  //     (item) => {
-  //       // Item.findOneAndReplace;
-  //       console.log('*****newRatingSum1', newRatingSum);
-  //       console.log('****newTotalRatings1', newTotalRatings);
-  //       // console.log(item);
-  //       item.ratingSum = newRatingSum;
-  //       item.totalRatings = newTotalRatings;
-  //       console.log(item);
-  //       item.save();
-  //     },
-  //     (err) => {
-  //       console.log(`Error in finding item ${err}`);
-  //     }
-  //   );
-  // });
-
   res.status(200).send('Update/Insert successful');
 });
 module.exports = router;

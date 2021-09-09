@@ -15,6 +15,9 @@ function Product(props) {
           <img src={image} width="70" height="100" alt={title} />
           {/* <div>{_id}</div> */}
           <div className="product-card-title">{title}</div>
+          {totalRatings !== 0 && (
+            <div className="average-rating">{ratingSum / totalRatings}</div>
+          )}
         </div>
         {/* <div>{ratingSum && totalRatings && ratingSum / totalRatings}</div> */}
         {/* <div>{totalRatings}</div> */}
