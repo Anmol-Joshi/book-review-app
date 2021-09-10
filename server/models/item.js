@@ -14,6 +14,15 @@ const itemSchema = new Schema({
   category: String,
   ratingSum: Number,
   totalRatings: Number,
+  price: Number,
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 module.exports = mongoose.model('Item', itemSchema);
