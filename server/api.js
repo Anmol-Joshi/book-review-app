@@ -8,6 +8,7 @@ const users = require('./routes/users');
 const sessions = require('./routes/sessions');
 const items = require('./routes/items');
 const cart = require('./routes/cart');
+const orders = require('./routes/orders');
 // Add json and urlencoded middleware
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
@@ -29,6 +30,9 @@ router.use('/users', users);
 router.use('/sessions', sessions);
 
 router.use('/items', items);
+
 router.use('/cart', cart);
+
+router.use('/orders', orders);
 
 module.exports = router;

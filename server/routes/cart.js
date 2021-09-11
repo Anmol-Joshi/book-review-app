@@ -16,7 +16,11 @@ router.get('/', (req, res) => {
   Cart.findOne({ sessionId: sessionId })
     .then((cart) => {
       if (cart) {
-        res.status(201).send(cart);
+        if (cart.cartItems.length === 0) {
+          res.status(201).send({ result: 'Cart is Empty' });
+        } else {
+          res.status(201).send(cart);
+        }
       } else {
         res.status(201).send({ result: 'No cart' });
       }
@@ -132,5 +136,55 @@ router.post('/', (req, res) => {
       res.status(500).send({ error: e });
     });
 });
+// Delete item from Cart
+router.delete('/', (req, res) => {
+  if (!req.body) {
+    res.status(400).send({ error: 'Empty body sent in request' });
+    return;
+  }
+  const sessionId = req.session.id;
+  const itemId = req.body.itemId;
 
+  if (!sessionId) {
+    res.status(400).send({ error: 'sessionId not present in request' });
+    return;
+  }
+
+  if (!itemId) {
+    res.status(400).send({ error: 'productId not present in request' });
+    return;
+  }
+
+  Cart.findOne({ sessionId })
+    .then((cart) => {
+      //if cart already exists
+      if (cart) {
+        for (let i = 0; i < cart.cartItems.length; i++) {
+          if (cart.cartItems[i].itemId === itemId) {
+            cart.totalAmount =
+              cart.totalAmount -
+              cart.cartItems[i].quantity * cart.cartItems[i].price;
+            cart.cartItems[i].remove();
+          }
+        }
+        console.log('Cart Item deleted');
+        cart
+          .save()
+          .then(() => {
+            res.status(201).send({ result: 'Item deleted from cart' });
+          })
+          .catch(() => {
+            res.status(500).send({ error: 'Error while adding item to cart' });
+          });
+
+        return;
+      } else {
+        res.send({ error: 'Invalid Session Id passed' });
+      }
+    })
+    .catch(() => {
+      res.status(500).send({ error: 'Internal Server Error' });
+    });
+  return;
+});
 module.exports = router;
