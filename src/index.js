@@ -23,7 +23,7 @@ function App() {
           path="/productdetailpage/:id"
           component={ProductDetailPage}
         />
-        <Route exact path="cartdetail" component={CartDetailPage} />
+        <Route exact path="/cart" component={CartDetailPage} />
       </Switch>
     </Router>
   );

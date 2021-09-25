@@ -11,16 +11,23 @@
   font-family: 'Nunito', sans-serif;
   margin: 3px;
 }
+.nav-cart-sign-in {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
 .site-logo {
   vertical-align: center;
   /* text-decoration: none; */
 }
-.nav-sign-in {
+.nav-sign-in,
+.nav-cart {
   vertical-align: center;
   text-decoration: underline;
 }
 .nav-site-name,
-.nav-sign-in {
+.nav-sign-in,
+.nav-cart {
   display: flex;
   justify-content: space-between;
   /* align-content: inherit; */
