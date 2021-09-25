@@ -45,12 +45,6 @@ class PostReview extends React.Component {
     event.preventDefault();
   };
 
-  // const [category, setCategory] = React.useState('');
-  //   const handleCategoryChange = (rating) => {
-  //     this.setState({rating:rating})
-  //     // setCategory(category);
-  //     // console.log(category);
-  // }
   render() {
     return (
       <div>

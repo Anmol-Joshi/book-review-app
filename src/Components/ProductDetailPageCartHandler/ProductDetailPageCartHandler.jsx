@@ -37,7 +37,40 @@ class ProductDetailPageCartHandler extends React.Component {
         console.log('Error occured while adding items to cart');
       });
   };
-
+  handleDeleteFromCart = (e) => {
+    e.preventDefault();
+    console.log(this.props);
+    const deleteData = {
+      itemId: this.props.itemId,
+      // quantity: this.state.quantity,
+      // title: this.props.title,
+      // author: this.props.author,
+      // description: this.props.description,
+      // pages: this.props.pages,
+      // publishDate: this.props.publishDate,
+      // image: this.props.image,
+      // category: this.props.category,
+      // ratingSum: this.props.ratingSum,
+      // totalRatings: this.props.totalRatings,
+      // price: this.props.price,
+    };
+    console.log('deleteData is', deleteData);
+    axios
+      .delete(
+        'http://localhost:3000/api/cart/',
+        { data: deleteData },
+        {
+          withCredentials: true,
+        }
+      )
+      .then((res) => {
+        console.log('Items deleted from cart');
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log('Error occured while deleting from cart');
+      });
+  };
   render() {
     return (
       <div className="cart-handler-buttons">
@@ -97,7 +130,15 @@ class ProductDetailPageCartHandler extends React.Component {
             text="Add to Cart"
           /> */}
           <br />
-          <Button text="Delete from Cart" />
+          {/* <Button text="Delete from Cart" /> */}
+          <button
+            className="button"
+            onClick={(e) => {
+              this.handleDeleteFromCart(e);
+            }}
+          >
+            Delete from Cart
+          </button>
         </form>
       </div>
     );

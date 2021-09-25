@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const router = express.Router();
 const Cart = require('../models/cart.js');
 // const auth = require('../middlewares/auth');
@@ -38,6 +39,7 @@ router.post('/', (req, res) => {
   // const { cartItem } = req.body;
   const cartItem = req.body;
   const sessionId = req.session.id;
+  console.log('session id in post is', sessionId);
   if (!sessionId) {
     res.status(400).send({ error: 'sessionId not present in request' });
     return;
@@ -57,6 +59,7 @@ router.post('/', (req, res) => {
   Cart.findOne({ sessionId })
     .then((cart) => {
       //if cart already exists
+
       if (cart) {
         console.log('Cart already exists');
         for (let i = 0; i < cart.cartItems.length; i++) {
@@ -142,9 +145,12 @@ router.delete('/', (req, res) => {
     res.status(400).send({ error: 'Empty body sent in request' });
     return;
   }
+  // console.log('req.body is', req.body);
   const sessionId = req.session.id;
+  // const sessionId = req.session.id;
   const itemId = req.body.itemId;
-
+  // console.log('req.body; is', req.body);
+  // console.log('session id is', sessionId);
   if (!sessionId) {
     res.status(400).send({ error: 'sessionId not present in request' });
     return;
@@ -158,9 +164,13 @@ router.delete('/', (req, res) => {
   Cart.findOne({ sessionId })
     .then((cart) => {
       //if cart already exists
+      // console.log('Cart is', cart);
       if (cart) {
         for (let i = 0; i < cart.cartItems.length; i++) {
+          console.log(cart.cartItems[i]);
           if (cart.cartItems[i].itemId === itemId) {
+            console.log('itemId is', itemId);
+            console.log('cart item', i, '***', cart.cartItems[i]);
             cart.totalAmount =
               cart.totalAmount -
               cart.cartItems[i].quantity * cart.cartItems[i].price;
