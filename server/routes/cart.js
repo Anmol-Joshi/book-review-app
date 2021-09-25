@@ -12,17 +12,21 @@ router.get('/', (req, res) => {
   //   res.status(400).send({ error: 'Empty body sent in request' });
   //   return;
   // }
+
   const sessionId = req.session.id;
   console.log('**Session id is', sessionId);
   Cart.findOne({ sessionId: sessionId })
     .then((cart) => {
       if (cart) {
         if (cart.cartItems.length === 0) {
+          console.log('cart is empty');
           res.status(201).send({ result: 'Cart is Empty' });
         } else {
+          console.log('cart is', cart);
           res.status(201).send(cart);
         }
       } else {
+        console.log('no cart');
         res.status(201).send({ result: 'No cart' });
       }
     })
