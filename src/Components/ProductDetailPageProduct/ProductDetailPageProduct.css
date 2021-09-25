@@ -16,7 +16,9 @@
 .author-title,
 .category-title,
 .pages-title,
-.description-title {
+.quantity-title,
+.description-title,
+.price-title {
   display: inline;
   font-weight: 600;
   /* bold,underline */

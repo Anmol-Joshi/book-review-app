@@ -7,6 +7,7 @@ import ProductList from './ProductList';
 import ProductDetailPage from './ProductDetailPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import CartDetailPage from './CartDetailPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           path="/productdetailpage/:id"
           component={ProductDetailPage}
         />
+        <Route exact path="cartdetail" component={CartDetailPage} />
       </Switch>
     </Router>
   );

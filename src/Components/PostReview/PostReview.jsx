@@ -32,6 +32,11 @@ class PostReview extends React.Component {
           alert('review submitted');
         })
         .catch((err) => {
+          if (err.response.status == 401) {
+            alert('Please login to post review');
+          } else {
+            alert(err);
+          }
           console.log(this.session);
           console.log(err);
         });

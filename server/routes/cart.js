@@ -97,7 +97,7 @@ router.post('/', (req, res) => {
             author: cartItem.author,
             description: cartItem.description,
             pages: cartItem.pages,
-            publishDate: cartItem.publishDate,
+            // publishDate: cartItem.publishDate,
             image: cartItem.image,
             category: cartItem.category,
             ratingSum: cartItem.ratingSum,

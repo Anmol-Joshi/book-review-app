@@ -31,12 +31,9 @@ class ProductDetailsPage extends React.Component {
     return (
       <div>
         <Navbar />
-        {/* {console.log('***', this.state)} */}
-        {/* <div>{this.props.match.params.id}</div> */}
-        {/* {console.log(this.state)} */}
-        {/* {!this.state && console.log('Not null')} */}
         {this.state !== null && (
           <ProductDetailPageProduct
+            id={this.props.match.params.id}
             title={this.state.product.title}
             author={this.state.product.author}
             category={this.state.product.category}
@@ -45,27 +42,12 @@ class ProductDetailsPage extends React.Component {
             pages={this.state.product.pages}
             ratingSum={this.state.product.ratingSum}
             totalRatings={this.state.product.totalRatings}
+            price={this.state.product.price}
           />
         )}
         {this.state !== null && (
           <ProductDetailPageReview id={this.props.match.params.id} />
         )}
-        {/* {console.log(this.state.isLoaded)} */}
-        {/* {this.state.isLoaded !== false ? (
-          <ProductDetailPageProduct product={this.state.product} />
-        ) : (
-          <div></div>
-        )} */}
-        {/* {!this.state.isLoaded && <div>this.state.product</div>} */}
-        {/* <div>{this.state.product}</div> */}
-        {/* <div>{this.state.product.title}</div>
-      <div>{this.state.product.pages}</div>
-      <div>{this.state.product.description}</div>
-      <div>{this.state.product.ratingSum}</div>
-      <div>{this.state.product.totalRating}</div> */}
-        {/* <div>{this.state.product}</div>
-      <div>{this.state.product}</div>
-      <div>{this.state.product}</div> */}
       </div>
     );
   }

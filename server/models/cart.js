@@ -14,7 +14,7 @@ const cartSchema = new Schema({
       author: String,
       description: String,
       pages: Number,
-      publishDate: String,
+      // publishDate: String,
       image: String,
       category: String,
       ratingSum: Number,
