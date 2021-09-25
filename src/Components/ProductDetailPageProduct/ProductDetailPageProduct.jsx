@@ -46,7 +46,7 @@ function ProductDetailPageProduct(props) {
           </div>
           <div className="price">
             <div className="price-title">Price:</div>
-            {price} Rs
+            {price / 100} Rs
           </div>
           <div className="quantity">
             <div className="quantity-title">Quantity:-</div>

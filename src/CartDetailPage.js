@@ -9,6 +9,7 @@ class CartDetailPage extends React.Component {
     // this.isLoaded = false;
     this.state = {
       cartItems: [],
+      totalAmount: 0,
       isLoaded: false,
     };
     // this.cart = [];
@@ -20,6 +21,7 @@ class CartDetailPage extends React.Component {
       })
       .then((res) => {
         this.setState({ cartItems: res.data.cartItems });
+        this.setState({ totalAmount: res.data.totalAmount });
         this.setState({ isLoaded: true });
         console.log('CartDetail Page res', res);
       })
@@ -30,6 +32,7 @@ class CartDetailPage extends React.Component {
 
   render() {
     console.log('Cart detail Page cart is', this.state.cartItems);
+    console.log('Cart detail Page res is', this.state.totalAmount);
     return (
       <div>
         <Navbar />

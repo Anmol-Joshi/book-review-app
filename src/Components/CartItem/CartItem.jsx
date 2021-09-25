@@ -19,7 +19,7 @@ function CartItem(props) {
         <div className="cart-item-title">{title}</div>
         <div className="cart-item-author">{author}</div>
         <div className="cart-item-quantity">{quantity}</div>
-        <div className="cart-item-price">{price}</div>
+        <div className="cart-item-price">{price / 100}</div>
       </div>
     </div>
   );
