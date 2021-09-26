@@ -1,32 +1,48 @@
+import axios from 'axios';
 function initiatePayment(paymentHandlers, onOrderCreateFailure) {
-  fetch('/api/orders', {
-    method: 'POST',
-  })
-    .then((res) => res.json())
+  // fetch('http://localhost:4000/api/orders', {
+  //   method: 'POST',
+  //   credentials: 'same-origin',
+  //   mode: 'cors',
+  // })
+  //   .then((res) => res.json())
+  axios
+    .post('http://localhost:4000/api/orders', {
+      withCredentials: true,
+    })
     .then(
       (res) => {
+        // console.log('***line 15 res.amount is is', res.data);
         const options = {
           key: process.env.REACT_APP_RZP_KEY_ID,
-          amount: res.amount,
-          currency: res.currency,
-          order_id: res.rzpOrderId,
+
+          amount: res.data.amount,
+          currency: res.data.currency,
+          order_id: res.data.rzpOrderId,
           name: 'Best reads',
-          image: 'https://workat.tech/images/At-144x144.png',
-          description: 'Ecommerce',
+          image:
+            'https://angel.co/images/static_pages/logo/AngelList_Black_Victory_Hand.png',
+          description: 'E-commerce',
           theme: {
             color: '#276ef1',
           },
           modal: {
-            ondismiss: paymentHandlers.onDismiss || (() => {}),
+            ondismiss:
+              paymentHandlers.onDismiss ||
+              (() => {
+                console.log('modal dismissed');
+              }),
             escape: false,
           },
           handler: (response) => {
+            console.log('payments line 38 res is', res);
+            console.log('payments line 38 res.data is', res.data);
             paymentHandlers.onSuccess &&
               paymentHandlers.onSuccess({
                 ...response,
-                id: res.orderId,
-                amount: res.amount,
-                currency: res.currency,
+                id: res.data.orderId,
+                amount: res.data.amount,
+                currency: res.data.currency,
               });
           },
         };
@@ -34,7 +50,10 @@ function initiatePayment(paymentHandlers, onOrderCreateFailure) {
         rzp1.open();
       },
       (err) => {
-        onOrderCreateFailure && onOrderCreateFailure(err);
+        onOrderCreateFailure &&
+          onOrderCreateFailure((err) => {
+            console.log(err);
+          });
       }
     );
 }

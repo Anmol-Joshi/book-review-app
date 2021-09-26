@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import CartItems from './Components/CartItems/CartItems';
 import Navbar from './Components/Navbar/Navabar';
+import PaymentHandler from './Components/PaymentHandler/PaymentHandler';
 axios.defaults.withCredentials = true;
 class CartDetailPage extends React.Component {
   constructor(props) {
@@ -37,6 +38,12 @@ class CartDetailPage extends React.Component {
       <div>
         <Navbar />
         {this.state.isLoaded && <CartItems cartItems={this.state.cartItems} />}
+        {this.state.isLoaded && (
+          <PaymentHandler
+            totalAmount={this.state.totalAmount}
+            cartItems={this.state.cartItems}
+          />
+        )}
       </div>
     );
   }

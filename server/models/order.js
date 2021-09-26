@@ -4,10 +4,13 @@ const { Schema } = mongoose;
 const orderSchema = new Schema({
   userId: String,
   // sessionId: { type: String, required: true },
-  totalAmount: { type: Number, required: true },
+  amount: { type: Number, required: true },
   currency: { type: String, required: true },
   receipt: Number,
   status: { type: String, required: true },
+  razorpay_payment_id: String,
+  razorpay_order_id: String,
+  razorpay_signature: String,
   cartItems: [
     {
       itemId: String,
