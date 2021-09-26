@@ -38,6 +38,7 @@ class CartDetailPage extends React.Component {
       <div>
         <Navbar />
         {this.state.isLoaded && <CartItems cartItems={this.state.cartItems} />}
+        {this.state.isLoaded && <div>Total:-{this.state.totalAmount}</div>}
         {this.state.isLoaded && (
           <PaymentHandler
             totalAmount={this.state.totalAmount}

@@ -11,21 +11,23 @@ import CartDetailPage from './CartDetailPage';
 
 function App() {
   return (
-    <Router>
-      {/* A <Switch> looks through its children <Route>s and
+    <div className="main-div">
+      <Router>
+        {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-      <Switch>
-        <Route exact path="/" component={LoginPage} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/productlist" component={ProductList} />
-        <Route
-          exact
-          path="/productdetailpage/:id"
-          component={ProductDetailPage}
-        />
-        <Route exact path="/cart" component={CartDetailPage} />
-      </Switch>
-    </Router>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/productlist" component={ProductList} />
+          <Route
+            exact
+            path="/productdetailpage/:id"
+            component={ProductDetailPage}
+          />
+          <Route exact path="/cart" component={CartDetailPage} />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

@@ -3,8 +3,11 @@
   font-size: x-large;
 }
 .product-group {
+  /* max-width:; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  /* grid-template-columns: 1fr 1fr; */
   /* justify-items: center; */
 }
 /* @media screen and(max-width: 850px) {

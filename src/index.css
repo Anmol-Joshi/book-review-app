@@ -1,0 +1,8 @@
+html {
+  /* overflow-wrap: break-word !important; */
+}
+body {
+}
+.main-div {
+  overflow-wrap: break-word;
+}

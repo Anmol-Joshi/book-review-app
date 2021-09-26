@@ -32,9 +32,11 @@ class ProductDetailPageCartHandler extends React.Component {
       })
       .then(() => {
         console.log('Items added to cart');
+        alert('Items added to cart');
       })
       .catch(() => {
         console.log('Error occured while adding items to cart');
+        alert('Error occured while adding items to cart');
       });
   };
   handleDeleteFromCart = (e) => {
@@ -65,10 +67,12 @@ class ProductDetailPageCartHandler extends React.Component {
       )
       .then((res) => {
         console.log('Items deleted from cart');
+        alert('Items deleted from cart');
       })
       .catch((err) => {
         console.log(err);
         console.log('Error occured while deleting from cart');
+        alert('Error occured while deleting from cart');
       });
   };
   render() {

@@ -7,7 +7,7 @@ class PostReview extends React.Component {
     super(props);
     this.state = {
       review: '',
-      rating: '',
+      rating: 1,
     };
   }
   handleSubmit = (event) => {
@@ -30,6 +30,7 @@ class PostReview extends React.Component {
         )
         .then(() => {
           alert('review submitted');
+          window.location.reload();
         })
         .catch((err) => {
           if (err.response.status == 401) {
