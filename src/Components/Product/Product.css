@@ -32,7 +32,7 @@
   transition: 1s;
   -webkit-transform: scale(1.01);
 }
-.individual-product :hover {
+.product-cart-image:hover {
   -webkit-transform: scale(1.01);
   transition: 0.25s;
 }

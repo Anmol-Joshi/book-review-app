@@ -4,7 +4,8 @@ import './Product.css';
 
 function Product(props) {
   const { product } = props;
-  const { _id, title, ratingSum, totalRatings, image } = product;
+  console.log('product is', product);
+  const { _id, title, ratingSum, totalRatings, image, price, author } = product;
   // console.log(_id);
   return (
     <div key={_id} className="individual-product">
@@ -25,11 +26,14 @@ function Product(props) {
           </div>
           <div className="product-card-details">
             <div className="product-card-title">{title}</div>
+            <div className="product-card-author">{author}</div>
             <div className="product-cart-rating">
               {totalRatings !== 0 && (
                 <div className="average-rating">{ratingSum / totalRatings}</div>
               )}
             </div>
+            <div className="product-card-price">{price}</div>
+            {/* <div className="product-card-title">{title}</div> */}
           </div>
         </div>
         {/* <div>{ratingSum && totalRatings && ratingSum / totalRatings}</div> */}
