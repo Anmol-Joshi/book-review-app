@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
+import OrderDetails from './Components/OrderDetails/OrderDetails';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -77,6 +78,7 @@ class Profile extends React.Component {
             <input type="button" onClick={this.onLogout} value="Logout"></input>
           </div>
         </div>
+        <OrderDetails />
       </div>
     );
   }

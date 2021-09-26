@@ -23,12 +23,12 @@ class PaymentHandler extends React.Component {
         console.log('Payment dismissed');
       },
       onSuccess: function (response, id, amount, currency) {
-        console.log(response);
-        console.log(id);
-        console.log(amount);
-        console.log(currency);
-        console.log('Call put api from here');
-        console.log(response.id);
+        // console.log(response);
+        // console.log(id);
+        // console.log(amount);
+        // console.log(currency);
+        // // console.log('Call put api from here');
+        // console.log(response.id);
         // axios.put('orders/response.id',{})
         // http://localhost:4000/api/orders/6150307ea9ff497bf4e7b5ec
         axios
@@ -40,7 +40,7 @@ class PaymentHandler extends React.Component {
           )
           .then((res) => {
             console.log(res);
-            alert('Order put api successful');
+            alert('Order placed ');
           })
           .catch((err) => {
             console.log('line 46 payment handler error is', err);

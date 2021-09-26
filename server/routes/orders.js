@@ -17,7 +17,18 @@ const rzpInstance = new Razorpay({
   key_id: rzpKey,
   key_secret: secret,
 });
-
+router.get('/', auth.authenticate, (req, res) => {
+  if (!req.session.userId) {
+    res.status(400).send({ error: 'Not logged in' });
+  }
+  Order.findOne({ userId: req.session.userId })
+    .then((order) => {
+      res.status(200).send(order);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 router.post('/', auth.authenticate, (req, res) => {
   console.log('***line 20 orders');
   if (!req.session.userId) {
