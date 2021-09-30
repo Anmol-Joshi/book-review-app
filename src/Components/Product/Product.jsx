@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './Product.css';
+import RatingStars from '../RatingStars/RatingStars';
 
 function Product(props) {
   const { product } = props;
@@ -32,9 +33,10 @@ function Product(props) {
           </Link>
           <div className="product-card-author">{author}</div>
           <div className="product-cart-rating">
-            {totalRatings !== 0 && (
+            {/* {totalRatings !== 0 && (
               <div className="average-rating">{ratingSum / totalRatings}</div>
-            )}
+            )} */}
+            <RatingStars totalRatings={totalRatings} ratingSum={ratingSum} />
           </div>
           <div className="product-card-price">Rs.{price / 100}</div>
           {/* <div className="product-card-title">{title}</div> */}

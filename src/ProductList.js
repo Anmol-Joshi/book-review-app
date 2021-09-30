@@ -36,7 +36,7 @@ class ProductList extends React.Component {
     // this.fetchProducts()
 
     return (
-      <div>
+      <div className="product-list-page-main-div">
         <Navbar />
         <Products products={this.state.products} />
       </div>

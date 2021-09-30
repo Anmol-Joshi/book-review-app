@@ -1,3 +1,8 @@
+.products-main-div {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .product-list-heading {
   font-family: 'Nunito', sans-serif;
   font-size: x-large;

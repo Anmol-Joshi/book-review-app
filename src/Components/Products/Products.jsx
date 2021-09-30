@@ -9,7 +9,7 @@ function Products(props) {
   console.log(props.products);
   const { products } = props;
   return (
-    <div>
+    <div className="products-main-div">
       <h1 className="product-list-heading">Product List</h1>
       <div className="product-group">
         {products.map((product) => (

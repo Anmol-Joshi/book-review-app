@@ -15,31 +15,36 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="nav-container">
-        <div className="nav">
-          <div className="nav-site-name">
-            <Link
-              to={`/productlist`}
-              style={{ color: '#000', textDecoration: 'none' }}
-            >
-              <FaAngellist className="site-logo" />
-              BestReads
-            </Link>
-          </div>
-          <div className="nav-cart-sign-in">
-            <div className="nav-cart">
+        <div className="nav-container-main">
+          <div className="nav">
+            <div className="nav-site-name">
               <Link
-                to={`/cart`}
+                to={`/productlist`}
                 style={{ color: '#000', textDecoration: 'none' }}
               >
-                Cart
+                <FaAngellist className="site-logo" />
+                BestReads
               </Link>
-              {/* <GoSignIn /> */}
             </div>
-            <div className="nav-sign-in">
-              <Link to={`/`} style={{ color: '#000', textDecoration: 'none' }}>
-                Sign In
-              </Link>
-              {/* <GoSignIn /> */}
+            <div className="nav-cart-sign-in">
+              <div className="nav-cart">
+                <Link
+                  to={`/cart`}
+                  style={{ color: '#000', textDecoration: 'none' }}
+                >
+                  Cart
+                </Link>
+                {/* <GoSignIn /> */}
+              </div>
+              <div className="nav-sign-in">
+                <Link
+                  to={`/`}
+                  style={{ color: '#000', textDecoration: 'none' }}
+                >
+                  Sign In
+                </Link>
+                {/* <GoSignIn /> */}
+              </div>
             </div>
           </div>
         </div>
