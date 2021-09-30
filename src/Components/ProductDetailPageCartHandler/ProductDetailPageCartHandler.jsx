@@ -28,7 +28,7 @@ class ProductDetailPageCartHandler extends React.Component {
     };
     axios
       // .post('http://localhost:3000/api/cart', postData, {
-      .post('/api/cart', postData, {
+      .post('/api/cart/', postData, {
         withCredentials: true,
       })
       .then(() => {

@@ -17,7 +17,6 @@ function CartItems(props) {
         {cartItems.map((item) => (
           <CartItem key={item._id} item={item} />
         ))}
-        {/* <PaymentHandler /> */}
       </div>
     </div>
   );
