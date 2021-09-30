@@ -3,6 +3,7 @@ import React from 'react';
 import CartItems from './Components/CartItems/CartItems';
 import Navbar from './Components/Navbar/Navabar';
 import PaymentHandler from './Components/PaymentHandler/PaymentHandler';
+import './CartDetailPage.css';
 axios.defaults.withCredentials = true;
 class CartDetailPage extends React.Component {
   constructor(props) {
@@ -38,19 +39,23 @@ class CartDetailPage extends React.Component {
     return (
       <div>
         <Navbar />
-        {this.state.isLoaded && this.state.cartItems && (
-          <CartItems cartItems={this.state.cartItems} />
-        )}
-        {this.state.isLoaded && !this.state.cartItems && <h1>Cart is empty</h1>}
-        {this.state.isLoaded && this.state.cartItems && (
-          <div>Total:- Rs.{this.state.totalAmount / 100}</div>
-        )}
-        {this.state.isLoaded && this.state.cartItems && (
-          <PaymentHandler
-            totalAmount={this.state.totalAmount}
-            cartItems={this.state.cartItems}
-          />
-        )}
+        <div className="cart-detail-page-main">
+          {this.state.isLoaded && this.state.cartItems && (
+            <CartItems cartItems={this.state.cartItems} />
+          )}
+          {this.state.isLoaded && !this.state.cartItems && (
+            <h1>Cart is empty</h1>
+          )}
+          {this.state.isLoaded && this.state.cartItems && (
+            <div>Total:- Rs.{this.state.totalAmount / 100}</div>
+          )}
+          {this.state.isLoaded && this.state.cartItems && (
+            <PaymentHandler
+              totalAmount={this.state.totalAmount}
+              cartItems={this.state.cartItems}
+            />
+          )}
+        </div>
       </div>
     );
   }
