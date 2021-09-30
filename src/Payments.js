@@ -7,7 +7,8 @@ function initiatePayment(paymentHandlers, onOrderCreateFailure) {
   // })
   //   .then((res) => res.json())
   axios
-    .post('http://localhost:4000/api/orders', {
+    // .post('http://localhost:4000/api/orders', {//working
+    .post('/api/orders', {
       withCredentials: true,
     })
     .then(

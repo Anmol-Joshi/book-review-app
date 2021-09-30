@@ -17,7 +17,8 @@ class ProductList extends React.Component {
   componentDidMount() {
     // axios.get('https://best-read.herokuapp.com/api/items').then((res)=>{
     axios
-      .get('http://localhost:4000/api/items')
+      // .get('http://localhost:4000/api/items')
+      .get('/api/items/')
       .then((res) => {
         this.setState({ products: res.data });
         // console.log(this.state.products)

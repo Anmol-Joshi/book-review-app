@@ -13,7 +13,8 @@ class ProductDetailPageReview extends React.Component {
   componentDidMount() {
     axios
       // .get(`https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`)
-      .get(`http://localhost:4000/api/items/${this.props.id}/reviews`)
+      // .get(`http://localhost:4000/api/items/${this.props.id}/reviews`)
+      .get(`/api/items/${this.props.id}/reviews/`)
       .then((res) => {
         this.setState({ reviews: res, isLoaded: true });
 

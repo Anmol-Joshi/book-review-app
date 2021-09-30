@@ -17,7 +17,8 @@ class CartDetailPage extends React.Component {
   }
   componentDidMount() {
     axios
-      .get(`http://localhost:4000/api/cart/`, {
+      // .get(`http://localhost:4000/api/cart/`, {
+      .get(`/api/cart/`, {
         // withCredentials: true,
       })
       .then((res) => {

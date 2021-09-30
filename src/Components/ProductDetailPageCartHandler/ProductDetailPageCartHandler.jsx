@@ -27,7 +27,8 @@ class ProductDetailPageCartHandler extends React.Component {
       price: this.props.price,
     };
     axios
-      .post('http://localhost:3000/api/cart', postData, {
+      // .post('http://localhost:3000/api/cart', postData, {
+      .post('/api/cart', postData, {
         withCredentials: true,
       })
       .then(() => {
@@ -59,7 +60,8 @@ class ProductDetailPageCartHandler extends React.Component {
     console.log('deleteData is', deleteData);
     axios
       .delete(
-        'http://localhost:3000/api/cart/',
+        // 'http://localhost:3000/api/cart/',
+        '/api/cart/',
         { data: deleteData },
         {
           withCredentials: true,

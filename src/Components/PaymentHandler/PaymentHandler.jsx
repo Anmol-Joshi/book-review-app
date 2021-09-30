@@ -34,7 +34,8 @@ class PaymentHandler extends React.Component {
         axios
           .put(
             // `https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`,
-            `http://localhost:4000/api/orders/${response.id}`,
+            // `http://localhost:4000/api/orders/${response.id}`,
+            `/api/orders/${response.id}/`,
             response,
             { withCredentials: true }
           )
