@@ -18,7 +18,7 @@ router.use(
   cors({
     credentials: true,
     // origin: 'http://localhost:3000',
-    origin: 'https://best-read.herokuapp.com/',
+    origin: ['https://best-read.herokuapp.com/', 'http://localhost:3000'],
   })
 );
 // router.use(function (req, res, next) {
