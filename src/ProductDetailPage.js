@@ -4,6 +4,7 @@ import React from 'react';
 import ProductDetailPageProduct from './Components/ProductDetailPageProduct/ProductDetailPageProduct';
 import ProductDetailPageReview from './Components/ProductDetailPageReview/ProductDetailPageReview';
 import Navbar from './Components/Navbar/Navabar';
+import './ProductDetailPage.css';
 class ProductDetailsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -32,23 +33,25 @@ class ProductDetailsPage extends React.Component {
     return (
       <div>
         <Navbar />
-        {this.state !== null && (
-          <ProductDetailPageProduct
-            id={this.props.match.params.id}
-            title={this.state.product.title}
-            author={this.state.product.author}
-            category={this.state.product.category}
-            description={this.state.product.description}
-            image={this.state.product.image}
-            pages={this.state.product.pages}
-            ratingSum={this.state.product.ratingSum}
-            totalRatings={this.state.product.totalRatings}
-            price={this.state.product.price}
-          />
-        )}
-        {this.state !== null && (
-          <ProductDetailPageReview id={this.props.match.params.id} />
-        )}
+        <div className="product-detail-page-main">
+          {this.state !== null && (
+            <ProductDetailPageProduct
+              id={this.props.match.params.id}
+              title={this.state.product.title}
+              author={this.state.product.author}
+              category={this.state.product.category}
+              description={this.state.product.description}
+              image={this.state.product.image}
+              pages={this.state.product.pages}
+              ratingSum={this.state.product.ratingSum}
+              totalRatings={this.state.product.totalRatings}
+              price={this.state.product.price}
+            />
+          )}
+          {this.state !== null && (
+            <ProductDetailPageReview id={this.props.match.params.id} />
+          )}
+        </div>
       </div>
     );
   }
