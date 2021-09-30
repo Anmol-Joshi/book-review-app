@@ -43,7 +43,7 @@ class CartDetailPage extends React.Component {
         )}
         {this.state.isLoaded && !this.state.cartItems && <h1>Cart is empty</h1>}
         {this.state.isLoaded && this.state.cartItems && (
-          <div>Total:-{this.state.totalAmount}</div>
+          <div>Total:- Rs.{this.state.totalAmount / 100}</div>
         )}
         {this.state.isLoaded && this.state.cartItems && (
           <PaymentHandler

@@ -16,10 +16,10 @@ function CartItem(props) {
     <div className="cart-item-group">
       <img src={image} alt="cart item" className="cart-item-image" />
       <div className="cart-product-info">
-        <div className="cart-item-title">{title}</div>
-        <div className="cart-item-author">{author}</div>
-        <div className="cart-item-quantity">{quantity}</div>
-        <div className="cart-item-price">{price / 100}</div>
+        <div className="cart-item-title">Title:-{title}</div>
+        <div className="cart-item-author">Author:-{author}</div>
+        <div className="cart-item-quantity">Quantity:-{quantity}</div>
+        <div className="cart-item-price">Rs.{price / 100}</div>
       </div>
     </div>
   );
