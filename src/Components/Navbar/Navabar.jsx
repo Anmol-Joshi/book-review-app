@@ -38,7 +38,7 @@ class Navbar extends React.Component {
               </div>
               <div className="nav-sign-in">
                 <Link
-                  to={`/`}
+                  to={`/login`}
                   style={{ color: '#000', textDecoration: 'none' }}
                 >
                   Sign In
