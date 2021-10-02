@@ -123,7 +123,21 @@ router.put('/:id', auth.authenticate, (req, res) => {
         },
       }
     ).then(() => {
-      console.log('**line 111');
+      // console.log('**line 111');
+      Cart.findOne({ sessionId: req.session.id }).then(
+        (cart) => {
+          console.log(cart);
+          cart.cartItems = [];
+          cart.totalAmount = 0;
+          console.log('cart', cart);
+          cart.save().then(() => {
+            console.log('Cart emptied');
+          });
+        },
+        (err) => {
+          console.log(`Error in finding cart ${err}`);
+        }
+      );
       res.status(204).send({ message: 'Order updated' });
     });
   } else {

@@ -11,7 +11,16 @@ class Navbar extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
+    // this.state = { loggedIn: false };
   }
+  // componentDidMount() {
+  //   fetch('/api/users/me').then((user) => {
+  //     if (user.status === 200) {
+  //       this.setState({ loggedIn: true });
+  //       // window.location = '/profile';
+  //     }
+  //   });
+  // }
   render() {
     return (
       <div className="nav-container">

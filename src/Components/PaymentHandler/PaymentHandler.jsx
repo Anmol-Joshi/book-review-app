@@ -42,6 +42,7 @@ class PaymentHandler extends React.Component {
           .then((res) => {
             console.log(res);
             alert('Order placed ');
+            window.location = '/profile';
           })
           .catch((err) => {
             console.log('line 46 payment handler error is', err);
