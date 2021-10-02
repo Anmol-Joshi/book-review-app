@@ -15,10 +15,13 @@
   /* grid-template-columns: 1fr 1fr; */
   /* justify-items: center; */
 }
-/* @media screen and(max-width: 850px) {
-  .product-group {
+@media screen and(max-width: 850px) {
+  /* .product-group {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: left;
-  }
-} */
+  } */
+  /* .products-main-div {
+    max-width: 95%;
+  } */
+}

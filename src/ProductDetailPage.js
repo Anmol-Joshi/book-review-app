@@ -4,6 +4,8 @@ import React from 'react';
 import ProductDetailPageProduct from './Components/ProductDetailPageProduct/ProductDetailPageProduct';
 import ProductDetailPageReview from './Components/ProductDetailPageReview/ProductDetailPageReview';
 import Navbar from './Components/Navbar/Navabar';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './ProductDetailPage.css';
 class ProductDetailsPage extends React.Component {
   constructor(props) {
@@ -34,6 +36,18 @@ class ProductDetailsPage extends React.Component {
       <div>
         <Navbar />
         <div className="product-detail-page-main">
+          {this.state === null && (
+            <div>
+              <Loader
+                className="loader"
+                type="ThreeDots"
+                color="#000000"
+                height={100}
+                width={100}
+                timeout={3000} //3 secs
+              />
+            </div>
+          )}
           {this.state !== null && (
             <ProductDetailPageProduct
               id={this.props.match.params.id}

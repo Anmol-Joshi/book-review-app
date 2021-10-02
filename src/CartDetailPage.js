@@ -4,6 +4,8 @@ import CartItems from './Components/CartItems/CartItems';
 import Navbar from './Components/Navbar/Navabar';
 import PaymentHandler from './Components/PaymentHandler/PaymentHandler';
 import './CartDetailPage.css';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 axios.defaults.withCredentials = true;
 class CartDetailPage extends React.Component {
   constructor(props) {
@@ -39,6 +41,18 @@ class CartDetailPage extends React.Component {
     return (
       <div>
         <Navbar />
+        {this.state.isLoaded === false && (
+          <div>
+            <Loader
+              className="loader"
+              type="ThreeDots"
+              color="#000000"
+              height={100}
+              width={100}
+              timeout={3000} //3 secs
+            />
+          </div>
+        )}
         <div className="cart-detail-page-main">
           {this.state.isLoaded && this.state.cartItems && (
             <CartItems cartItems={this.state.cartItems} />

@@ -6,3 +6,6 @@ body {
 .main-div {
   overflow-wrap: break-word;
 }
+.loader {
+  text-align: center;
+}
