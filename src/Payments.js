@@ -51,10 +51,9 @@ function initiatePayment(paymentHandlers, onOrderCreateFailure) {
         rzp1.open();
       },
       (err) => {
-        onOrderCreateFailure &&
-          onOrderCreateFailure((err) => {
-            console.log(err);
-          });
+        onOrderCreateFailure && onOrderCreateFailure(err); // => {
+        //console.log(err);//
+        //});//
       }
     );
 }

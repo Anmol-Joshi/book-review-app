@@ -12,11 +12,13 @@ class PaymentHandler extends React.Component {
     this.state = {};
     // const totalAmount = props.totalAmount;
   }
+
   handlePayment = (e) => {
     e.preventDefault();
     console.log(this.props);
     function onOrderCreateFailure(err) {
       console.log(err);
+      alert(`Please sign in before proceeding for payment`);
     }
     const paymentHandlers = {
       onDismiss: function () {
