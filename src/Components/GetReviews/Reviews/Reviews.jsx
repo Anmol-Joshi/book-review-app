@@ -1,9 +1,11 @@
 import React from 'react';
 import './Reviews.css';
+import ProfileIcon from '../../../icons/account_circle.svg';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Review(props) {
   let { reviews, id } = props;
+  console.log('review props', props);
   // console.log('***reviews are', reviews);
   // console.log('**** id is', id);
   // console.log('**** userId is', this.session.userId);
@@ -27,6 +29,7 @@ function Review(props) {
       {reviews &&
         reviews.map((review) => (
           <div key={review._id}>
+            <img src={ProfileIcon} alt="" />
             {review.createdAt}
             <br />
             {review.itemId}
