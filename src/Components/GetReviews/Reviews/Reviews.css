@@ -1,0 +1,14 @@
+.review-profile-image {
+  /* max-width: 50px; */
+}
+.review-div {
+  padding: 10px;
+  display: inline;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid black;
+  /* border-top: 2px solid black; */
+}
+.review-profile-image-div {
+  display: inline;
+}

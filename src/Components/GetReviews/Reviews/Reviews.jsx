@@ -28,29 +28,39 @@ function Review(props) {
     <div>
       {reviews &&
         reviews.map((review) => (
-          <div key={review._id}>
-            <img src={ProfileIcon} alt="" />
-            {review.createdAt}
-            <br />
-            {review.itemId}
-            <br />
-            {review.firstName}
-            {review.lastName} <br />
-            {review.rating} <br />
-            {review.review}
-            <br />
-            {review.updatedAt}
-            <br />
-            {review.userId}
-            <br />
-            {review._id}
-            <br />
-            {/* <FontAwesomeIcon className="f2ed" size="2x" /> */}
-            {/* <i class="fas fa-trash-alt"></i> */}
-            {/* <button className="btn">
+          <div>
+            <div key={review._id} className="review-div">
+              <div className="review-profile-image-div">
+                <img
+                  src={ProfileIcon}
+                  alt="review-profile"
+                  className="review-profile-image"
+                />
+              </div>
+              <div className="review-content-div">
+                {review.createdAt}
+                <br />
+                {review.itemId}
+                <br />
+                {review.firstName}
+                {review.lastName} <br />
+                {review.rating} <br />
+                {review.review}
+                <br />
+                {review.updatedAt}
+                <br />
+                {review.userId}
+                {review._id}
+              </div>
+              {/* <br /> */}
+              {/* <br /> */}
+              {/* <FontAwesomeIcon className="f2ed" size="2x" /> */}
+              {/* <i class="fas fa-trash-alt"></i> */}
+              {/* <button className="btn">
               <i className="fa fas fa-trash-alt"></i>
             </button> */}
-            <hr />
+            </div>
+            {/* <hr /> */}
           </div>
         ))}
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './GetReviews.jsx';
+import './GetReviews.css';
 import Reviews from './Reviews/Reviews.jsx';
 class GetReviews extends React.Component {
   constructor(props) {
@@ -24,10 +24,10 @@ class GetReviews extends React.Component {
   // }
   render() {
     return (
-      <div>
+      <div className="get-reviews-div">
         {/* {console.log('***line 28 GetReviews', this.props.reviews)}
         {console.log('***line 29 GetReviews', this.state.reviews.data)} */}
-        <hr />
+        {/* <hr /> */}
 
         <Reviews reviews={this.props.reviews.data} id={this.props.id} />
       </div>
