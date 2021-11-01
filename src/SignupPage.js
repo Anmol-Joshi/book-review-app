@@ -44,28 +44,39 @@ class LoginPage extends React.Component {
   onSignupClick = (e) => {
     e.preventDefault();
     const { email, password,firstName,lastName } = this.state;
-    fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ email, password,firstName,lastName }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    }).then((res) => {
-          if (res.status === 204) {
-            fetch('/api/sessions', {
-                  method: 'POST',
-                  body: JSON.stringify({ email, password }),
-                  headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                  },
-                }).then((res) => {
-                  if (res.status === 204) {
-                    window.location = '/profile';
-                  }
-                });
-            
-          }
-        })
+    if(firstName===''){
+      alert('FirstName cannot be empty!')
+    }else if(lastName===''){
+      alert('LastName cannot be empty!')
+    }else if(email===''){
+      alert('Email cannot be empty!')
+    }else if(password===''){
+      alert('Password cannot be empty!')
+    }else{
+      fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ email, password,firstName,lastName }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then((res) => {
+            if (res.status === 204) {
+              fetch('/api/sessions', {
+                    method: 'POST',
+                    body: JSON.stringify({ email, password }),
+                    headers: {
+                      'Content-type': 'application/json; charset=UTF-8',
+                    },
+                  }).then((res) => {
+                    if (res.status === 204) {
+                      window.location = '/profile';
+                    }
+                  });
+              
+            }
+          })
+    }
+    
   };
 
   render() {
@@ -74,6 +85,7 @@ class LoginPage extends React.Component {
         <Navbar />
 
         <div className="signupPage">
+        <h3>Sign Up:</h3>
           <form>
           <div className='formTitles'>First Name: </div>
           <input
@@ -122,6 +134,9 @@ class LoginPage extends React.Component {
                 onClick={this.onSignupClick}
                 value="Sign up"
               ></input>
+              <div>
+              Existing User?<a href="/login">Login</a>
+              </div>
             </div>
           </form>
         </div>

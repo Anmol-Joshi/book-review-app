@@ -16,7 +16,8 @@ body {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   /* transition: 1s;
   -webkit-transform: scale(1.01); */
-  padding: 50px;
+  padding: 30px;
+  padding-top: 10px;
   margin-top: 30px;
 }
 input{
@@ -24,4 +25,8 @@ input{
 }
 .formTitles{
   font-size: large;
+}
+body{
+  /* background-color:red;
+  -webkit-tap-highlight-color: transparent; */
 }

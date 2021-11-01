@@ -57,6 +57,7 @@ class LoginPage extends React.Component {
         <Navbar />
 
         <div className="loginPage">
+        <h3>Login:</h3>
           <form>
           <div className='formTitles'>Email: </div>
             <input
@@ -82,11 +83,9 @@ class LoginPage extends React.Component {
                 onClick={this.onLoginClick}
                 value="Login"
               ></input>
-              {/* <input
-                type="submit"
-                onClick={this.onSignupClick}
-                value="Sign up"
-              ></input> */}
+              <div>
+              New User?<a href="/signup">Signup</a>
+              </div>
             </div>
           </form>
         </div>

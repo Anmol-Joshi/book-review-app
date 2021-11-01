@@ -59,6 +59,7 @@ class Profile extends React.Component {
       <div>
         <Navbar />
         <div className="profile">
+        <h3>Profile:</h3>
           <div className='formTitles'>Email: {this.state.email}</div>
           <div>
             First Name:{' '}

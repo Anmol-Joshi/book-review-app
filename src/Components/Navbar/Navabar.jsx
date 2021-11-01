@@ -21,7 +21,7 @@ class Navbar extends React.Component {
         this.setState({loggedIn:true,firstName:res.data.firstName})
         console.log('First name is',this.state.firstName);
       }
-    })
+    }).catch(()=>console.log("User isn't logged in"))
   }
   // checkUserLoginStatus=()=>{
   //   axios.get('/api/users/me').then(res=>{
