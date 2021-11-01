@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
 import OrderDetails from './Components/OrderDetails/OrderDetails';
+import './index.css'
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -57,8 +58,8 @@ class Profile extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className="Profile">
-          <div>Email: {this.state.email}</div>
+        <div className="profile">
+          <div className='formTitles'>Email: {this.state.email}</div>
           <div>
             First Name:{' '}
             <input
@@ -67,7 +68,7 @@ class Profile extends React.Component {
               value={this.state.firstName || ''}
             ></input>
           </div>
-          <div>
+          <div className='formTitles'>
             Last Name:{' '}
             <input
               name="lastName"

@@ -1,12 +1,13 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
+import './index.css'
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
+      email: 'test@gmail.com',
+      password: 'test',
     };
   }
 
@@ -55,8 +56,9 @@ class LoginPage extends React.Component {
       <div>
         <Navbar />
 
-        <div className="LoginPage">
+        <div className="loginPage">
           <form>
+          <div className='formTitles'>Email: </div>
             <input
               placeholder="email"
               name="email"
@@ -65,6 +67,7 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.email}
             ></input>
+            <div className='formTitles'>Password: </div>
             <input
               placeholder="password"
               name="password"

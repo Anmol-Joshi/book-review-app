@@ -21,8 +21,9 @@ router.get('/', auth.authenticate, (req, res) => {
   if (!req.session.userId) {
     res.status(400).send({ error: 'Not logged in' });
   }
-  Order.findOne({ userId: req.session.userId })
+  Order.find({ userId: req.session.userId })
     .then((order) => {
+      console.log(order)
       res.status(200).send(order);
     })
     .catch((err) => {

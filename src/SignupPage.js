@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
-
+import './index.css'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
@@ -73,8 +73,9 @@ class LoginPage extends React.Component {
       <div>
         <Navbar />
 
-        <div className="LoginPage">
+        <div className="signupPage">
           <form>
+          <div className='formTitles'>First Name: </div>
           <input
               placeholder="First Name"
               name="firstName"
@@ -83,6 +84,7 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.firstName}
             ></input>
+            <div className='formTitles'>Last Name: </div>
             <input
               placeholder="Last Name"
               name="lastName"
@@ -91,16 +93,18 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.lastName}
             ></input>
+            <div className='formTitles'>Email: </div>
             <input
-              placeholder="email"
+              placeholder="Email"
               name="email"
               required
               type="email"
               onInput={this.onInput}
               value={this.state.email}
             ></input>
+            <div className='formTitles'>Password: </div>
             <input
-              placeholder="password"
+              placeholder="Password"
               name="password"
               required
               type="password"
@@ -110,7 +114,7 @@ class LoginPage extends React.Component {
             <div>
               {/* <input
                 type="submit"
-                onClick={this.onLoginClick}
+                onClick={this.onLoginClick}}
                 value="Login"
               ></input> */}
               <input
