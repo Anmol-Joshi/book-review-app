@@ -19,7 +19,7 @@ class OrderDetails extends React.Component {
     const isLoaded=this.state.isLoaded;
     let pastOrders;
     if(isLoaded){
-      pastOrders=<div className='orderDetailMainDiv'>Past Order Details are: {this.state.orders.map((order)=>(<OrderDetail order={order}/>))}</div>
+      pastOrders=<div className='orderDetailMainDiv'>Past Order Details are: {this.state.orders.map((order)=>(<OrderDetail key={order._id}order={order}/>))}</div>
     }else{
       pastOrders=<div className='orderDetailMainDiv'>No Past Orders Found</div>
     }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { FaAngellist } from 'react-icons/fa';
 import { GoSignIn } from 'react-icons/go';
+import axios from 'axios';
 <style>
   @import
   url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
@@ -11,18 +12,32 @@ class Navbar extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
-    // this.state = { loggedIn: false };
+    this.state = { loggedIn: false };
+    this.state = { firstName: '' };
   }
-  // componentDidMount() {
-  //   fetch('/api/users/me').then((user) => {
-  //     if (user.status === 200) {
-  //       this.setState({ loggedIn: true });
-  //       console.log('logged in');
-  //       // window.location = '/profile';
+  componentDidMount(){
+    axios.get('/api/users/me').then(res=>{
+      if(res.data){
+        this.setState({loggedIn:true,firstName:res.data.firstName})
+        console.log('First name is',this.state.firstName);
+      }
+    })
+  }
+  // checkUserLoginStatus=()=>{
+  //   axios.get('/api/users/me').then(res=>{
+  //     if(res.data){
+  //       this.setState({loggedIn:true,firstName:res.data.firstName})
+  //       console.log('First name is',this.state.firstName);
   //     }
-  //   });
+  //   })
   // }
   render() {
+    let name;
+    if(this.state.loggedIn===true){
+      name=this.state.firstName;
+    }else{
+      name='Sign In'
+    }
     return (
       <div className="nav-container">
         <div className="nav-container-main">
@@ -51,7 +66,8 @@ class Navbar extends React.Component {
                   to={`/login`}
                   style={{ color: '#000', textDecoration: 'none' }}
                 >
-                  Sign In
+                {name}
+                  {/* Sign In */}
                 </Link>
                 {/* <GoSignIn /> */}
               </div>
