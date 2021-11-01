@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
         return;
     }
 
-    const { email, password } = req.body;
+    const { email, password ,firstName,lastName} = req.body;
 
     if (!email) {
         res.status(400).send({error: "Email not present in request"});
@@ -20,6 +20,14 @@ router.post('/', (req, res) => {
 
     if (!password) {
         res.status(400).send({error: "Password not present in request"});
+        return;
+    }
+    if (!firstName) {
+        res.status(400).send({error: "First Name not present in request"});
+        return;
+    }
+    if (!lastName) {
+        res.status(400).send({error: "Last Name not present in request"});
         return;
     }
 
@@ -34,9 +42,12 @@ router.post('/', (req, res) => {
         const userCredential = new UserCredential({ email, password: hash });
 
         userCredential.save().then(() => {
-            const user = new User({ _id: userCredential.id, email });
+            const user = new User({ _id: userCredential.id, email ,firstName:firstName,lastName:lastName});
             user.save().then(() => {
-                res.status(201).send({ id: userCredential.id });
+                console.log(firstName,'first Name')
+                console.log(lastName,'last Name')
+                console.log("user saved",firstName,lastName)
+                res.status(204).send({ id: userCredential.id });
             });
         });
     }).catch(() => {

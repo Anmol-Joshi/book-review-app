@@ -13,8 +13,8 @@ function Review(props) {
     <div>
       {reviews &&
         reviews.map((review) => (
-          <div>
-            <div key={review._id} className="review-div">
+          <div  key={review._id} >
+            <div className="review-div">
               <div className="review-profile-image-div">
                 <img
                   src={ProfileIcon}

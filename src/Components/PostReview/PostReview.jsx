@@ -33,7 +33,7 @@ class PostReview extends React.Component {
           window.location.reload();
         })
         .catch((err) => {
-          if (err.response.status == 401) {
+          if (err.response.status === 401) {
             alert('Please login to post review');
           } else {
             alert(err);

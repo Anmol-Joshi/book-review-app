@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 import Profile from './Profile';
 import ProductList from './ProductList';
 import ProductDetailPage from './ProductDetailPage';
@@ -17,6 +18,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/signup" component={SignupPage} />
           <Route exact path="/" component={ProductList} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/productlist" component={ProductList} />

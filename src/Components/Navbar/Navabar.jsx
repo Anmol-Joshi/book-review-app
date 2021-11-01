@@ -17,6 +17,7 @@ class Navbar extends React.Component {
   //   fetch('/api/users/me').then((user) => {
   //     if (user.status === 200) {
   //       this.setState({ loggedIn: true });
+  //       console.log('logged in');
   //       // window.location = '/profile';
   //     }
   //   });

@@ -26,17 +26,21 @@ class Profile extends React.Component {
 
   onUpdate = () => {
     const { firstName, lastName } = this.state;
-    fetch('/api/users/me', {
-      method: 'PUT',
-      body: JSON.stringify({ firstName, lastName }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    }).then((res) => {
-      if (res.status === 204) {
-        window.location = '/profile';
-      }
-    });
+    if (firstName === '' || lastName === '') {
+      alert('FirstName/LastName cannot be empty');
+    } else {
+      fetch('/api/users/me', {
+        method: 'PUT',
+        body: JSON.stringify({ firstName, lastName }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then((res) => {
+        if (res.status === 204) {
+          window.location = '/profile';
+        }
+      });
+    }
   };
 
   onLogout = () => {
