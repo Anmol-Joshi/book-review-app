@@ -19,10 +19,6 @@ function ProductDetailPageProduct(props) {
     price,
   } = props;
 
-  // let rating = 0;
-  // if (totalRatings !== 0) {
-  //   rating = ratingSum / totalRatings;
-  // }
   return (
     <div>
       <div className="product-info-group">
@@ -52,8 +48,6 @@ function ProductDetailPageProduct(props) {
             <div className="quantity-title">Quantity:-</div>
           </div>
 
-          {/* <Button text="Add to Cart" /> */}
-          {/* (this.props.id !== null && ( */}
           <ProductDetailPageCartHandler
             itemId={id}
             title={title}
@@ -66,16 +60,12 @@ function ProductDetailPageProduct(props) {
             totalRatings={totalRatings}
             price={price}
           />
-          {/* )) */}
         </div>
       </div>
       <div className="description">
         <div className="description-title">Description:</div>
         {description}
       </div>
-
-      {/* <div>Ratings: {rating}</div> */}
-      {/* <div></div> */}
     </div>
   );
 }

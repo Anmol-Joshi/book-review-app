@@ -27,7 +27,6 @@ class ProductDetailPageCartHandler extends React.Component {
       price: this.props.price,
     };
     axios
-      // .post('http://localhost:3000/api/cart', postData, {
       .post('/api/cart/', postData, {
         withCredentials: true,
       })
@@ -45,22 +44,10 @@ class ProductDetailPageCartHandler extends React.Component {
     console.log(this.props);
     const deleteData = {
       itemId: this.props.itemId,
-      // quantity: this.state.quantity,
-      // title: this.props.title,
-      // author: this.props.author,
-      // description: this.props.description,
-      // pages: this.props.pages,
-      // publishDate: this.props.publishDate,
-      // image: this.props.image,
-      // category: this.props.category,
-      // ratingSum: this.props.ratingSum,
-      // totalRatings: this.props.totalRatings,
-      // price: this.props.price,
     };
     console.log('deleteData is', deleteData);
     axios
       .delete(
-        // 'http://localhost:3000/api/cart/',
         '/api/cart/',
         { data: deleteData },
         {
@@ -82,12 +69,6 @@ class ProductDetailPageCartHandler extends React.Component {
       <div className="cart-handler-buttons">
         <form className="cart-form" onSubmit={this.handleSubmit}>
           <label className="review-form-label">
-            {/* <div className="cart-quantity-heading">Quantity:-</div> */}
-            {/* <input
-              type="text"
-              onChange={(e) => this.setState({ rating: e.target.value })}
-              value={this.state.rating}
-            /> */}
             <select
               className="review-options"
               name="category"
@@ -113,14 +94,6 @@ class ProductDetailPageCartHandler extends React.Component {
               <option id="5">5</option>
             </select>
           </label>
-          {/* <label className="review-form-label"> */}
-          {/* <div className="review-heading">Review:-</div> */}
-          {/* <textarea
-              type="text"
-              onChange={(e) => this.setState({ review: e.target.value })}
-              value={this.state.review}
-            /> */}
-          {/* </label> */}
           <button
             className="button"
             onClick={(e) => {
@@ -129,14 +102,7 @@ class ProductDetailPageCartHandler extends React.Component {
           >
             Add to Cart
           </button>
-          {/* <Button
-            onClick={(e) => {
-              this.handleAddToCart(e);
-            }}
-            text="Add to Cart"
-          /> */}
           <br />
-          {/* <Button text="Delete from Cart" /> */}
           <button
             className="button"
             onClick={(e) => {

@@ -1,13 +1,10 @@
 const express = require('express');
 const router = express.Router();
-// const auth = require('../middlewares/auth');
 const Item = require('../models/item.js');
 const auth = require('../middlewares/auth');
-// const UserCredential = require('../models/user-credential');
 const User = require('../models/user');
 const Review = require('../models/review');
 const { connection } = require('mongoose');
-// const review = require('../models/review');
 
 // Item api
 // GET all items
@@ -46,9 +43,6 @@ router.get('/:itemId', (req, res) => {
 
 // Review for item
 router.get('/:itemId/reviews', (req, res) => {
-  // if (!req.session.userId) {
-  //   res.status(400).send({ error: 'Not logged in' });
-  // }
   Review.find({ itemId: req.params.itemId }).then((reviews) => {
     res.status(200).send(reviews);
   });
@@ -88,9 +82,7 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
     review: req.body.review,
   });
   User.find({ _id: req.session.userId }).then((user) => {
-    // console.log('***user is', user[0].firstName);
     const firstNameS = user[0].firstName;
-    // console.log('insertReview', insertReview);
     const lastNameS = user[0].lastName;
     const insertReview = new Review({
       itemId: req.params.itemId,
@@ -110,7 +102,6 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
             console.log('saved avg review');
           });
         } else {
-          console.log('***review is', review);
           review.review = insertReview.review;
           review.rating = insertReview.rating;
           review.save(() => {
@@ -118,7 +109,6 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
             console.log('saved avg review');
           });
         }
-        // updateAvgReview();
       },
       (err) => {
         console.log(err);
@@ -134,15 +124,10 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
         newRatingSum += review.rating;
         newTotalRatings++;
       });
-      console.log('*****newRatingSum', newRatingSum);
-      console.log('****newTotalRatings', newTotalRatings);
-      console.log('****itemId is', 'ObjectId("', req.params.itemId, '")');
+
       let ObjectId = require('mongodb').ObjectId;
-      console.log('****itmId is', req.params.itemId);
       Item.findById({ _id: new ObjectId(req.params.itemId) }).then(
         (item) => {
-          console.log('*****newRatingSum1', newRatingSum);
-          console.log('****newTotalRatings1', newTotalRatings);
           item.ratingSum = newRatingSum;
           item.totalRatings = newTotalRatings;
           console.log(item);

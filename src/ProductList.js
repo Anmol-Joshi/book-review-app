@@ -18,17 +18,11 @@ class ProductList extends React.Component {
     };
   }
   componentDidMount() {
-    // axios.get('https://best-read.herokuapp.com/api/items').then((res)=>{
     axios
-      // .get('http://localhost:4000/api/items')
       .get('/api/items/')
       .then((res) => {
         this.setState({ products: res.data });
         this.setState({ isLoaded: true });
-        // console.log(this.state.products)
-        // for(const ele of this.state.products){
-        // console.log('products are',this.state.products)
-        // }
       })
       .catch((err) => {
         console.log('error occurred', err);
@@ -36,9 +30,6 @@ class ProductList extends React.Component {
   }
 
   render() {
-    // console.log(this.state.products)
-    // this.fetchProducts()
-
     return (
       <div className="product-list-page-main-div">
         <Navbar />
@@ -58,7 +49,6 @@ class ProductList extends React.Component {
         )}
       </div>
     );
-    // return (<Products products={this.state.products} />)
   }
 }
 export default ProductList;

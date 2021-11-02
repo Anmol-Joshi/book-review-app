@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
 import OrderDetails from './Components/OrderDetails/OrderDetails';
-import './index.css'
+import './index.css';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -59,9 +59,9 @@ class Profile extends React.Component {
       <div>
         <Navbar />
         <div className="profile">
-        <h3>Profile:</h3>
-          <div className='formTitles'>Email: {this.state.email}</div>
-          <div>
+          <h3>Profile:</h3>
+          <div className="formTitles">Email: {this.state.email}</div>
+          <div className="formTitles">
             First Name:{' '}
             <input
               name="firstName"
@@ -69,7 +69,7 @@ class Profile extends React.Component {
               value={this.state.firstName || ''}
             ></input>
           </div>
-          <div className='formTitles'>
+          <div className="formTitles">
             Last Name:{' '}
             <input
               name="lastName"
@@ -78,10 +78,14 @@ class Profile extends React.Component {
             ></input>
           </div>
           <div>
-            <input type="button" onClick={this.onUpdate} value="Update"></input>
+            <button className="button" onClick={this.onUpdate}>
+              Update
+            </button>
           </div>
           <div>
-            <input type="button" onClick={this.onLogout} value="Logout"></input>
+            <button className="button" onClick={this.onLogout}>
+              Logout
+            </button>
           </div>
         </div>
         <OrderDetails />

@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
-import './index.css'
+import './index.css';
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
-      firstName:'',
-      lastName:''
+      firstName: '',
+      lastName: '',
     };
   }
 
@@ -21,62 +21,44 @@ class LoginPage extends React.Component {
   }
 
   onInput = (event) => {
-    console.log(event.target.value)
+    console.log(event.target.value);
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  // onLoginClick = (e) => {
-  //   e.preventDefault();
-  //   const { email, password } = this.state;
-  //   fetch('/api/sessions', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ email, password }),
-  //     headers: {
-  //       'Content-type': 'application/json; charset=UTF-8',
-  //     },
-  //   }).then((res) => {
-  //     if (res.status === 204) {
-  //       window.location = '/profile';
-  //     }
-  //   });
-  // };
-
   onSignupClick = (e) => {
     e.preventDefault();
-    const { email, password,firstName,lastName } = this.state;
-    if(firstName===''){
-      alert('FirstName cannot be empty!')
-    }else if(lastName===''){
-      alert('LastName cannot be empty!')
-    }else if(email===''){
-      alert('Email cannot be empty!')
-    }else if(password===''){
-      alert('Password cannot be empty!')
-    }else{
+    const { email, password, firstName, lastName } = this.state;
+    if (firstName === '') {
+      alert('FirstName cannot be empty!');
+    } else if (lastName === '') {
+      alert('LastName cannot be empty!');
+    } else if (email === '') {
+      alert('Email cannot be empty!');
+    } else if (password === '') {
+      alert('Password cannot be empty!');
+    } else {
       fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ email, password,firstName,lastName }),
+        body: JSON.stringify({ email, password, firstName, lastName }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
       }).then((res) => {
+        if (res.status === 204) {
+          fetch('/api/sessions', {
+            method: 'POST',
+            body: JSON.stringify({ email, password }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          }).then((res) => {
             if (res.status === 204) {
-              fetch('/api/sessions', {
-                    method: 'POST',
-                    body: JSON.stringify({ email, password }),
-                    headers: {
-                      'Content-type': 'application/json; charset=UTF-8',
-                    },
-                  }).then((res) => {
-                    if (res.status === 204) {
-                      window.location = '/profile';
-                    }
-                  });
-              
+              window.location = '/profile';
             }
-          })
+          });
+        }
+      });
     }
-    
   };
 
   render() {
@@ -85,10 +67,10 @@ class LoginPage extends React.Component {
         <Navbar />
 
         <div className="signupPage">
-        <h3>Sign Up:</h3>
+          <h3>Sign Up:</h3>
           <form>
-          <div className='formTitles'>First Name: </div>
-          <input
+            <div className="formTitles">First Name: </div>
+            <input
               placeholder="First Name"
               name="firstName"
               required
@@ -96,7 +78,7 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.firstName}
             ></input>
-            <div className='formTitles'>Last Name: </div>
+            <div className="formTitles">Last Name: </div>
             <input
               placeholder="Last Name"
               name="lastName"
@@ -105,7 +87,7 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.lastName}
             ></input>
-            <div className='formTitles'>Email: </div>
+            <div className="formTitles">Email: </div>
             <input
               placeholder="Email"
               name="email"
@@ -114,7 +96,7 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.email}
             ></input>
-            <div className='formTitles'>Password: </div>
+            <div className="formTitles">Password: </div>
             <input
               placeholder="Password"
               name="password"
@@ -124,18 +106,13 @@ class LoginPage extends React.Component {
               value={this.state.password}
             ></input>
             <div>
-              {/* <input
-                type="submit"
-                onClick={this.onLoginClick}}
-                value="Login"
-              ></input> */}
               <input
                 type="submit"
                 onClick={this.onSignupClick}
                 value="Sign up"
               ></input>
               <div>
-              Existing User?<a href="/login">Login</a>
+                Existing User?<a href="/login">Login</a>
               </div>
             </div>
           </form>

@@ -21,7 +21,6 @@
 .price-title {
   display: inline;
   font-weight: 600;
-  /* bold,underline */
 }
 .description {
   border-top: 2px solid black;

@@ -19,15 +19,11 @@ class PostReview extends React.Component {
       alert('Rating/Review cannot be empty');
     } else {
       console.log(postData);
-      // const token = sessionStorage.getItem('token');
 
       axios
-        .post(
-          // `https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`,
-          `/api/items/${this.props.id}/reviews`,
-          postData,
-          { withCredentials: true }
-        )
+        .post(`/api/items/${this.props.id}/reviews`, postData, {
+          withCredentials: true,
+        })
         .then(() => {
           alert('review submitted');
           window.location.reload();
@@ -38,11 +34,8 @@ class PostReview extends React.Component {
           } else {
             alert(err);
           }
-          console.log(this.session);
-          console.log(err);
         });
     }
-    // alert('A review was submitted: ' + this.state.review + this.state.rating);
     event.preventDefault();
   };
 
@@ -52,11 +45,7 @@ class PostReview extends React.Component {
         <form className="review-form" onSubmit={this.handleSubmit}>
           <label className="review-form-label">
             <div className="rating-heading">Rating:-</div>
-            {/* <input
-              type="text"
-              onChange={(e) => this.setState({ rating: e.target.value })}
-              value={this.state.rating}
-            /> */}
+
             <select
               className="review-options"
               name="category"

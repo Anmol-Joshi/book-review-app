@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Components/Navbar/Navabar';
-import './index.css'
+import './index.css';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -39,27 +39,15 @@ class LoginPage extends React.Component {
     });
   };
 
-  // onSignupClick = (e) => {
-  //   e.preventDefault();
-  //   const { email, password } = this.state;
-  //   fetch('/api/users', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ email, password }),
-  //     headers: {
-  //       'Content-type': 'application/json; charset=UTF-8',
-  //     },
-  //   });
-  // };
-
   render() {
     return (
       <div>
         <Navbar />
 
         <div className="loginPage">
-        <h3>Login:</h3>
+          <h3>Login:</h3>
           <form>
-          <div className='formTitles'>Email: </div>
+            <div className="formTitles">Email: </div>
             <input
               placeholder="email"
               name="email"
@@ -68,7 +56,7 @@ class LoginPage extends React.Component {
               onInput={this.onInput}
               value={this.state.email}
             ></input>
-            <div className='formTitles'>Password: </div>
+            <div className="formTitles">Password: </div>
             <input
               placeholder="password"
               name="password"
@@ -78,13 +66,11 @@ class LoginPage extends React.Component {
               value={this.state.password}
             ></input>
             <div>
-              <input
-                type="submit"
-                onClick={this.onLoginClick}
-                value="Login"
-              ></input>
+              <button className="button" onClick={this.onLoginClick}>
+                Login
+              </button>
               <div>
-              New User?<a href="/signup">Signup</a>
+                New User?<a href="/signup">Signup</a>
               </div>
             </div>
           </form>

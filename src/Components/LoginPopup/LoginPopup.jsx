@@ -3,12 +3,6 @@
 import React from 'react';
 import axios from 'axios';
 import './LoginPopup.css';
-// import githubIcon from '../../assets/Profile_Icons/iconfinder_github_317712.png';
-// import linkedinIcon from '../../assets/Profile_Icons/iconfinder_2018_social_media_popular_app_logo_linkedin_3225190.png';
-// import codechefIcon from '../../assets/Profile_Icons/codechef-1324440139527402917_32.png';
-// import hackerrankIcon from '../../assets/Profile_Icons/iconfinder_160_Hackerrank_logo_logos_4373234.png';
-// import twitterIcon from '../../assets/Profile_Icons/iconfinder_2018_social_media_popular_app_logo_twitter_3225183.png';
-// import mediumIcon from '../../assets/Profile_Icons/iconfinder_Circled_Medium_svg5_5279113.png';
 
 class LoginPopup extends React.Component {
   constructor(props) {
@@ -18,10 +12,6 @@ class LoginPopup extends React.Component {
       popupInvalidEmailIdOrPasswordError: false,
       emailId: '',
       password: '',
-      // codechefId: '',
-      // hackerrankId: '',
-      // twitterId: '',
-      // mediumId: '',
     };
   }
 
@@ -49,15 +39,9 @@ class LoginPopup extends React.Component {
               this.setState({ popupInvalidEmailIdOrPasswordError: false });
             }, 3000);
           }
-
-          // window.location.reload();
         })
         .catch((err) => {
           console.log('Error occured', err);
-          // this.setState({ popupInvalidEmailIdOrPasswordError: true });
-          // setTimeout(() => {
-          //   this.setState({ popupInvalidEmailIdOrPasswordError: false });
-          // }, 3000);
         });
     }
   };
@@ -98,7 +82,6 @@ class LoginPopup extends React.Component {
               <div className="homepagepopup-profile-element-heading">
                 <img
                   className="homepagepopup-profile-element-heading-icon"
-                  // src={linkedinIcon}
                   alt=""
                 />
                 <label

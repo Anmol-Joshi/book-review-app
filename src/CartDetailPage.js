@@ -10,17 +10,14 @@ axios.defaults.withCredentials = true;
 class CartDetailPage extends React.Component {
   constructor(props) {
     super(props);
-    // this.isLoaded = false;
     this.state = {
       cartItems: [],
       totalAmount: 0,
       isLoaded: false,
     };
-    // this.cart = [];
   }
   componentDidMount() {
     axios
-      // .get(`http://localhost:4000/api/cart/`, {
       .get(`/api/cart/`, {
         // withCredentials: true,
       })
@@ -36,8 +33,6 @@ class CartDetailPage extends React.Component {
   }
 
   render() {
-    console.log('Cart detail Page cart is', this.state.cartItems);
-    console.log('Cart detail Page res is', this.state.totalAmount);
     return (
       <div>
         <Navbar />

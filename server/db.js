@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// mongoose.set('useFindAndModify', false);
 const connect = (dbConfig) => {
   try {
     const { host, username, password, database } = dbConfig;

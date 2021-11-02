@@ -2,19 +2,10 @@ const express = require('express');
 const session = require('express-session');
 const router = express.Router();
 const Cart = require('../models/cart.js');
-// const auth = require('../middlewares/auth');
-// const UserCredential = require('../models/user-credential');
-// const User = require('../models/user');
 
 //Get Cart
 router.get('/', (req, res) => {
-  // if (!req.body) {
-  //   res.status(400).send({ error: 'Empty body sent in request' });
-  //   return;
-  // }
-
   const sessionId = req.session.id;
-  console.log('**Session id is', sessionId);
   Cart.findOne({ sessionId: sessionId })
     .then((cart) => {
       if (cart) {
@@ -40,7 +31,6 @@ router.post('/', (req, res) => {
     res.status(400).send({ error: 'Empty body sent in request' });
     return;
   }
-  // const { cartItem } = req.body;
   const cartItem = req.body;
   const sessionId = req.session.id;
   console.log('session id in post is', sessionId);
@@ -63,9 +53,7 @@ router.post('/', (req, res) => {
   Cart.findOne({ sessionId })
     .then((cart) => {
       //if cart already exists
-
       if (cart) {
-        console.log('Cart already exists');
         for (let i = 0; i < cart.cartItems.length; i++) {
           if (cart.cartItems[i].itemId === cartItem.itemId) {
             cartElementExists = true;
@@ -74,15 +62,9 @@ router.post('/', (req, res) => {
             oldQty = cart.cartItems[i].quantity;
             cart.cartItems[i].quantity = cartItem.quantity;
             newQty = cart.cartItems[i].quantity;
-            console.log(oldQty);
-            console.log(oldPrice);
-            console.log(cart.totalAmount);
             cart.totalAmount =
               cart.totalAmount + (newQty - oldQty) * cart.cartItems[i].price;
             totalAmount = cart.totalAmount;
-            console.log(newQty);
-            console.log(totalAmount);
-            // cart.cartItems[i].remove();
             cart
               .save()
               .then(() => {
@@ -149,12 +131,8 @@ router.delete('/', (req, res) => {
     res.status(400).send({ error: 'Empty body sent in request' });
     return;
   }
-  // console.log('req.body is', req.body);
   const sessionId = req.session.id;
-  // const sessionId = req.session.id;
   const itemId = req.body.itemId;
-  // console.log('req.body; is', req.body);
-  // console.log('session id is', sessionId);
   if (!sessionId) {
     res.status(400).send({ error: 'sessionId not present in request' });
     return;
@@ -167,8 +145,6 @@ router.delete('/', (req, res) => {
 
   Cart.findOne({ sessionId })
     .then((cart) => {
-      //if cart already exists
-      // console.log('Cart is', cart);
       if (cart) {
         for (let i = 0; i < cart.cartItems.length; i++) {
           console.log(cart.cartItems[i]);

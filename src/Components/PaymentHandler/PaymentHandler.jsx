@@ -10,12 +10,10 @@ class PaymentHandler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    // const totalAmount = props.totalAmount;
   }
 
   handlePayment = (e) => {
     e.preventDefault();
-    console.log(this.props);
     function onOrderCreateFailure(err) {
       console.log(err);
       alert(`Please sign in before proceeding for payment`);
@@ -25,22 +23,10 @@ class PaymentHandler extends React.Component {
         console.log('Payment dismissed');
       },
       onSuccess: function (response, id, amount, currency) {
-        // console.log(response);
-        // console.log(id);
-        // console.log(amount);
-        // console.log(currency);
-        // // console.log('Call put api from here');
-        // console.log(response.id);
-        // axios.put('orders/response.id',{})
-        // http://localhost:4000/api/orders/6150307ea9ff497bf4e7b5ec
         axios
-          .put(
-            // `https://best-read.herokuapp.com/api/items/${this.props.id}/reviews`,
-            // `http://localhost:4000/api/orders/${response.id}`,
-            `/api/orders/${response.id}/`,
-            response,
-            { withCredentials: true }
-          )
+          .put(`/api/orders/${response.id}/`, response, {
+            withCredentials: true,
+          })
           .then((res) => {
             console.log(res);
             alert('Order placed ');
@@ -48,12 +34,6 @@ class PaymentHandler extends React.Component {
           })
           .catch((err) => {
             console.log('line 46 payment handler error is', err);
-            // if (err.response.status == 401) {
-            //   alert('Please login ');
-            // } else {
-            //   alert(err);
-            // }
-            console.log(this.session);
             console.log(err);
           });
       },

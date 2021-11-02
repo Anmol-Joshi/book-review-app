@@ -15,17 +15,10 @@ class ProductDetailsPage extends React.Component {
   }
   componentDidMount() {
     axios
-      .get(
-        // `https://best-read.herokuapp.com/api/items/${this.props.match.params.id}`
-        // `http://localhost:4000/api/items/${this.props.match.params.id}`
-        `/api/items/${this.props.match.params.id}/`
-      )
+      .get(`/api/items/${this.props.match.params.id}/`)
       .then((res) => {
-        // console.log('res is', res);
         this.setState({ product: res.data });
         this.setState({ isLoaded: true });
-        // console.log('product is', this.state.product);
-        // console.log(this.state.isLoaded);
       })
       .catch((err) => {
         console.log('error occurred', err);

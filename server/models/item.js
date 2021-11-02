@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const itemSchema = new Schema({
-  // _id: ObjectId,
   title: String,
   author: String,
   description: String,

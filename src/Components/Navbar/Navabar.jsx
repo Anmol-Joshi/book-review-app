@@ -15,28 +15,22 @@ class Navbar extends React.Component {
     this.state = { loggedIn: false };
     this.state = { firstName: '' };
   }
-  componentDidMount(){
-    axios.get('/api/users/me').then(res=>{
-      if(res.data){
-        this.setState({loggedIn:true,firstName:res.data.firstName})
-        console.log('First name is',this.state.firstName);
-      }
-    }).catch(()=>console.log("User isn't logged in"))
+  componentDidMount() {
+    axios
+      .get('/api/users/me')
+      .then((res) => {
+        if (res.data) {
+          this.setState({ loggedIn: true, firstName: res.data.firstName });
+        }
+      })
+      .catch(() => console.log("User isn't logged in"));
   }
-  // checkUserLoginStatus=()=>{
-  //   axios.get('/api/users/me').then(res=>{
-  //     if(res.data){
-  //       this.setState({loggedIn:true,firstName:res.data.firstName})
-  //       console.log('First name is',this.state.firstName);
-  //     }
-  //   })
-  // }
   render() {
     let name;
-    if(this.state.loggedIn===true){
-      name=this.state.firstName;
-    }else{
-      name='Sign In'
+    if (this.state.loggedIn === true) {
+      name = this.state.firstName;
+    } else {
+      name = 'Sign In';
     }
     return (
       <div className="nav-container">
@@ -59,17 +53,14 @@ class Navbar extends React.Component {
                 >
                   Cart
                 </Link>
-                {/* <GoSignIn /> */}
               </div>
               <div className="nav-sign-in">
                 <Link
                   to={`/login`}
                   style={{ color: '#000', textDecoration: 'none' }}
                 >
-                {name}
-                  {/* Sign In */}
+                  {name}
                 </Link>
-                {/* <GoSignIn /> */}
               </div>
             </div>
           </div>

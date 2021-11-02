@@ -7,13 +7,12 @@ import ReviewStars from './ReviewStars/ReviewStars';
 
 function Review(props) {
   let { reviews, id } = props;
-  console.log('review props', props);
 
   return (
     <div>
       {reviews &&
         reviews.map((review) => (
-          <div  key={review._id} >
+          <div key={review._id}>
             <div className="review-div">
               <div className="review-profile-image-div">
                 <img

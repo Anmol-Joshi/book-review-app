@@ -1,19 +1,11 @@
 import axios from 'axios';
 function initiatePayment(paymentHandlers, onOrderCreateFailure) {
-  // fetch('http://localhost:4000/api/orders', {
-  //   method: 'POST',
-  //   credentials: 'same-origin',
-  //   mode: 'cors',
-  // })
-  //   .then((res) => res.json())
   axios
-    // .post('http://localhost:4000/api/orders', {//working
     .post('/api/orders', {
       withCredentials: true,
     })
     .then(
       (res) => {
-        // console.log('***line 15 res.amount is is', res.data);
         const options = {
           key: process.env.REACT_APP_RZP_KEY_ID,
 
@@ -51,9 +43,7 @@ function initiatePayment(paymentHandlers, onOrderCreateFailure) {
         rzp1.open();
       },
       (err) => {
-        onOrderCreateFailure && onOrderCreateFailure(err); // => {
-        //console.log(err);//
-        //});//
+        onOrderCreateFailure && onOrderCreateFailure(err);
       }
     );
 }
