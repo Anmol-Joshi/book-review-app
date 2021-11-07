@@ -2,6 +2,19 @@
 
 ## Routes:-
 
+```js
+GET /api/developers
+Sample Response Body:
+[{
+	"id": "gcnit",
+	"avatar_url": "https://avatars.githubusercontent.com/u/4833751?v=4"
+}, {
+	"id": "sagarjain0907",
+	"avatar_url": "https://avatars.githubusercontent.com/u/20463272?v=4"
+}]
+Status: 200
+```
+
 <ol>
 <li><b>Get all items in a category(eg:-get all books)</b></li>
 GET https://best-read.herokuapp.com/api/items/:category<br>
