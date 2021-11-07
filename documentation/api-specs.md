@@ -3,16 +3,69 @@
 ## Routes:-
 
 ```js
-GET /api/developers
+GET /api/cart/
 Sample Response Body:
-[{
-	"id": "gcnit",
-	"avatar_url": "https://avatars.githubusercontent.com/u/4833751?v=4"
-}, {
-	"id": "sagarjain0907",
-	"avatar_url": "https://avatars.githubusercontent.com/u/20463272?v=4"
-}]
+[
+{
+      itemId: itemId,
+      quantity: quantity,
+      title: title,
+      author: author,
+      description: description,
+      pages: pages,
+      publishDate: publishDate,
+      image: image,
+      category: category,
+      ratingSum: ratingSum,
+      totalRatings: totalRatings,
+      price: price,
+    }
+]
 Status: 200
+
+{
+    "result": "No cart"
+}
+
+```
+
+```js
+POST api/cart/
+Sample Response Body:
+{
+      itemId: itemId,
+      quantity: quantity,
+      title: title,
+      author: author,
+      description: description,
+      pages: pages,
+      publishDate: publishDate,
+      image: image,
+      category: category,
+      ratingSum: ratingSum,
+      totalRatings: totalRatings,
+      price: price,
+    }
+Status: 200
+{
+   message: 'Item added to cart successfully'
+}
+Status: 400
+{
+   error: 'CartItems not present in request'
+}
+
+```
+
+```js
+DELETE api/cart/
+Sample Response Body:
+{
+      itemId: itemId,
+}
+Status: 201
+
+
 ```
 
 <ol>
