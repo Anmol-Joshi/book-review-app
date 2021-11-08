@@ -29,6 +29,11 @@ router.get('/', auth.authenticate, (req, res) => {
       console.log(err);
     });
 });
+
+// When pay now button is pressed ,
+// POST api/orders is called which in turn
+// creates an order in the db by finding the
+// order data from the cart
 router.post('/', auth.authenticate, (req, res) => {
   if (!req.session.userId) {
     res.status(400).send({ error: 'Not logged in' });
@@ -83,6 +88,8 @@ router.post('/', auth.authenticate, (req, res) => {
   );
 });
 
+// After payment is complete, the put api is called and
+// status of order is update to "COMPLETED" and cart is emptied
 router.put('/:id', auth.authenticate, (req, res) => {
   const orderId = req.params.id;
   const { razorpay_payment_id, razorpay_order_id, razorpay_signature } =
