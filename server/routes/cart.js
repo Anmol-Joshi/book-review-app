@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 });
 // Add item to cart
 router.post('/', (req, res) => {
-  if (!req.body.cartItem || !req.body.sessionId) {
+  if (!req.body) {
     res.status(400).send({ error: 'Empty body sent in request' });
     return;
   }
