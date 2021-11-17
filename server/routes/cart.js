@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
       if (cart) {
         if (cart.cartItems.length === 0) {
           console.log('cart is empty');
-          res.status(201).send({ result: 'Cart is Empty' });
+          res.status(200).send({ result: 'Cart is Empty' });
         } else {
           console.log('cart is', cart);
-          res.status(201).send(cart);
+          res.status(200).send(cart);
         }
       } else {
         console.log('no cart');
