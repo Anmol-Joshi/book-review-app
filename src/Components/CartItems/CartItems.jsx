@@ -8,8 +8,6 @@ import CartItem from '../CartItem/CartItem';
 </style>;
 function CartItems(props) {
   const { cartItems } = props;
-  console.log('cartItems props', props);
-  console.log(cartItems);
   return (
     <div>
       <h1>Cart Items</h1>

@@ -10,14 +10,11 @@ router.get('/', (req, res) => {
     .then((cart) => {
       if (cart) {
         if (cart.cartItems.length === 0) {
-          console.log('cart is empty');
           res.status(200).send({ result: 'Cart is Empty' });
         } else {
-          console.log('cart is', cart);
           res.status(200).send(cart);
         }
       } else {
-        console.log('no cart');
         res.status(201).send({ result: 'No cart' });
       }
     })
@@ -33,7 +30,6 @@ router.post('/', (req, res) => {
   }
   const cartItem = req.body;
   const sessionId = req.session.id;
-  console.log('session id in post is', sessionId);
   if (!sessionId) {
     res.status(400).send({ error: 'sessionId not present in request' });
     return;
@@ -58,7 +54,6 @@ router.post('/', (req, res) => {
           if (cart.cartItems[i].itemId === cartItem.itemId) {
             cartElementExists = true;
             oldPrice = cart.cartItems[i].quantity * cart.cartItems[i].price;
-            // cart.cartItems[i].qty = cart.cartItems[i].qty + 1;
             oldQty = cart.cartItems[i].quantity;
             cart.cartItems[i].quantity = cartItem.quantity;
             newQty = cart.cartItems[i].quantity;
@@ -68,7 +63,6 @@ router.post('/', (req, res) => {
             cart
               .save()
               .then(() => {
-                console.log('Cart saved');
                 res.status(200).send('Cart updated');
               })
               .catch((err) => {
@@ -77,8 +71,6 @@ router.post('/', (req, res) => {
           }
         }
         if (!cartElementExists) {
-          console.log(cartItem);
-          console.log('Cart items quantity');
           cart.cartItems.push({
             itemId: cartItem.itemId,
             quantity: cartItem.quantity,
@@ -86,7 +78,6 @@ router.post('/', (req, res) => {
             author: cartItem.author,
             description: cartItem.description,
             pages: cartItem.pages,
-            // publishDate: cartItem.publishDate,
             image: cartItem.image,
             category: cartItem.category,
             ratingSum: cartItem.ratingSum,
@@ -95,7 +86,6 @@ router.post('/', (req, res) => {
           });
           cart.totalAmount =
             cart.totalAmount + cartItem.quantity * cartItem.price;
-          console.log(cart);
           cart
             .save()
             .then(() => {
@@ -108,8 +98,6 @@ router.post('/', (req, res) => {
             });
         }
       } else {
-        console.log("Cart doesn't exist");
-        console.log(cartItem);
         const cartEntity = new Cart({
           sessionId: sessionId,
           cartItems: cartItem,
@@ -147,17 +135,13 @@ router.delete('/', (req, res) => {
     .then((cart) => {
       if (cart) {
         for (let i = 0; i < cart.cartItems.length; i++) {
-          console.log(cart.cartItems[i]);
           if (cart.cartItems[i].itemId === itemId) {
-            console.log('itemId is', itemId);
-            console.log('cart item', i, '***', cart.cartItems[i]);
             cart.totalAmount =
               cart.totalAmount -
               cart.cartItems[i].quantity * cart.cartItems[i].price;
             cart.cartItems[i].remove();
           }
         }
-        console.log('Cart Item deleted');
         cart
           .save()
           .then(() => {

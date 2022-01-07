@@ -26,8 +26,6 @@ router.get('/', (req, res) => {
 router.get('/:itemId', (req, res) => {
   Item.findOne({ _id: new Object(req.params.itemId) })
     .then((item) => {
-      console.log(typeof item);
-      console.log(item);
       if (item.length === 0) {
         res
           .status(404)
@@ -99,20 +97,16 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
         if (review == null) {
           insertReview.save(() => {
             updateAvgReview();
-            console.log('saved avg review');
           });
         } else {
           review.review = insertReview.review;
           review.rating = insertReview.rating;
           review.save(() => {
             updateAvgReview();
-            console.log('saved avg review');
           });
         }
       },
-      (err) => {
-        console.log(err);
-      }
+      (err) => {}
     );
   });
 
@@ -130,12 +124,9 @@ router.post('/:itemId/reviews', auth.authenticate, (req, res) => {
         (item) => {
           item.ratingSum = newRatingSum;
           item.totalRatings = newTotalRatings;
-          console.log(item);
           item.save();
         },
-        (err) => {
-          console.log(`Error in finding item ${err}`);
-        }
+        (err) => {}
       );
     });
   }

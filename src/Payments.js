@@ -28,8 +28,6 @@ function initiatePayment(paymentHandlers, onOrderCreateFailure) {
             escape: false,
           },
           handler: (response) => {
-            console.log('payments line 38 res is', res);
-            console.log('payments line 38 res.data is', res.data);
             paymentHandlers.onSuccess &&
               paymentHandlers.onSuccess({
                 ...response,

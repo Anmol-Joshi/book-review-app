@@ -26,7 +26,6 @@ class LoginPopup extends React.Component {
         this.setState({ popupError: false });
       }, 3000);
     } else {
-      console.log(postData);
       axios
         .post('api/sessions/', postData)
         .then((res) => {
@@ -59,7 +58,6 @@ class LoginPopup extends React.Component {
               <div className="homepagepopup-profile-element-heading">
                 <img
                   className="homepagepopup-profile-element-heading-icon"
-                  // src={githubIcon}
                   alt=""
                 />
                 <label

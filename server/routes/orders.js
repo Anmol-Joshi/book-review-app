@@ -22,12 +22,9 @@ router.get('/', auth.authenticate, (req, res) => {
   }
   Order.find({ userId: req.session.userId, status: 'COMPLETED' })
     .then((order) => {
-      console.log(order);
       res.status(200).send(order);
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => {});
 });
 
 // When pay now button is pressed ,
@@ -58,7 +55,6 @@ router.post('/', auth.authenticate, (req, res) => {
             //receipt denotes our order id on Razorpay
             receipt: orderId,
           };
-          console.log('**line 48', amount);
           //Create order on razorpay
           rzpInstance.orders.create(options, (err, rzpOrder) => {
             if (err) {
@@ -122,9 +118,7 @@ router.put('/:id', auth.authenticate, (req, res) => {
           cart.totalAmount = 0;
           cart.save().then(() => {});
         },
-        (err) => {
-          console.log(`Error in finding cart ${err}`);
-        }
+        (err) => {}
       );
       res.status(204).send({ message: 'Order updated' });
     });

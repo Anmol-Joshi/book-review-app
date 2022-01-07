@@ -25,11 +25,8 @@ class CartDetailPage extends React.Component {
         this.setState({ cartItems: res.data.cartItems });
         this.setState({ totalAmount: res.data.totalAmount });
         this.setState({ isLoaded: true });
-        console.log('CartDetail Page res', res);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   }
 
   render() {
